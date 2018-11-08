@@ -1,0 +1,209 @@
+@charset "utf-8";
+@import "core/_mixin";
+@import "base/_base_setting";
+@import "base/_font_setting";
+
+/*-----------------------------------------------
+ __site_common
+-----------------------------------------------*/
+
+.fa {padding-right: .5em;}
+.dnon {display: none;}
+
+.l_row {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    &.pd_side {
+        padding: 0 6%;
+    }
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-top: 80px;
+    @include media(960px) {
+        padding-top: 60px;
+    }
+    &.hanaiori {
+        padding-top: 0!important;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+
+.md_arrow {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    transition: all 0.1s ease-in;
+    display: block;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -1px;
+        background: #000;
+        width: 2px;
+        height: 100%;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-left: -5px;
+        background: url(../images/arrow_blk.svg) 0 0 no-repeat;
+        width: 10px;
+        height: 10px;
+    }
+    &.bottom {
+        &:after {
+            top: auto;
+            bottom: 0;
+            transform: rotate(180deg);
+        }
+    }
+    &.glm {
+        width: 60px;
+    }
+    &.left {
+        width: auto;
+        height: auto;
+        &:hover {
+            &:before {left: -10px;}
+            &:after {left: -10px;}
+        }
+        &:before {
+            top: 50%;
+            margin-top: -1px;
+            left: 0;
+            margin-left: 0;
+            width: 50px;
+            height: 2px;
+            transition: all .25s ease-out;
+        }
+        &:after {
+            left: 0;
+            top: 50%;
+            margin-top: -5px;
+            transform: rotate(-90deg);
+            transition: all .25s ease-out;
+        }
+    }
+    &.right {
+        width: auto;
+        height: auto;
+        &:hover {
+            &:before {left: -30px;}
+            &:after {left: 20px;}
+        }
+        &:before {
+            top: 50%;
+            margin-top: -1px;
+            left: -35px;
+            margin-left: 0;
+            width: 50px;
+            height: 2px;
+            transition: all .25s ease-out;
+        }
+        &:after {
+            left: 15px;
+            top: 50%;
+            margin-top: -5px;
+            transform: rotate(90deg);
+            transition: all .25s ease-out;
+        }
+        &.short {
+            &:before {
+                left: 20px;
+                width: 30px;
+            }
+            &:after {
+                left: 55px;
+            }
+            &:hover {
+                &:before {left: 40px;}
+                &:after {left: 75px;}
+            }
+        }
+        &.long {
+            &:before {
+                left: -35px;
+                width: 70px;
+            }
+            &:after {
+                left: 35px;
+            }
+            &:hover {
+                &:before {left: -10px;}
+                &:after {left: 60px;}
+            }
+        }
+    }
+    &.totop {
+        transform: rotate(180deg);
+        @media all and (-ms-high-contrast:none){
+            left: -10px;
+            top: -10px;
+        }
+    }
+}
+a.md_arrow__btn,.md_arrow__btn {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: $base_font__color;
+    display: inline-block;
+    box-sizing: border-box;
+    line-height: 1;
+    white-space: nowrap;
+    &:before {
+        content: '';
+        position: absolute;
+        margin-top: -1px;
+        bottom: -2px;
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        transition: all 0.1s ease-in;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 100%;
+        margin-left: -4px;
+        background: url(../images/arrow_blk.svg) 0 0 no-repeat;
+        width: 8px;
+        height: 8px;
+        transform: rotate(90deg);
+        transition: all 0.1s ease-in;
+    }
+    &:hover {
+        &:before {
+            width: 110%;
+        }
+        &:after {
+            left: 110%;
+        }
+    }
+}
+
+@import "modules/_header";
+@import "modules/_footer";
+@import "modules/_postEntry";
+@import "modules/_page";
+@import "modules/_contact";
+@import "modules/_pagenav";
+
+
