@@ -14,7 +14,8 @@ body {
     font-family:"游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", Roboto, Meiryo, sans-serif;
     text-rendering: optimizeLegibility;
     color: $base_font__color;
-    text-align: justify;
+    font-feature-settings : "palt";
+    letter-spacing: .02em;
 }
 
 a, a:link, a:active, a:visited {text-decoration: underline;outline: none;}
@@ -49,7 +50,7 @@ a:hover {color: $link-color;}
 .gf_robotoslab {font-family: 'Roboto Slab', serif;}
 .gf_crimson {font-family: 'Crimson Text', serif;}
 .gf_raleway {font-family: 'Raleway', sans-serif;}
-
+.gf_ptsuns {font-family: 'PT Sans', sans-serif;}
 
 /*-----------------------------------------------
  __fontweight

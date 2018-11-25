@@ -1,6 +1,18 @@
 (function($) {
     $(function(){
 
+        // タイポスクロール
+        if($('#fixnav').length){
+            $(window).scroll(function(){
+                var typo = $('.typo');
+                var wh = $(window).height();
+                var dh = $(document).height();
+                var st = $(document).scrollTop();
+                if ( dh > wh ){
+                    $('.typo').css('backgroundPosition', '50% ' + ~~(st/(dh-wh)*10000) / 100 + '%');
+                }
+            });
+        }
 
         // スムーズスクロール
         var notList = 'a[href^="#content"], #togmenu a[href^="#"], a.remodal-close,a[href^="#0"]';

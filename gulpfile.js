@@ -1,82 +1,65 @@
+//Sassコンパイル
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const plumber = require("gulp-plumber");
+const sourcemaps = require('gulp-sourcemaps');
+const filter = require('gulp-filter');
+const notify = require('gulp-notify');
+const browserSync = require('browser-sync');
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-//var sass = require('gulp-ruby-sass');
-//var please = require('gulp-pleeease');
-var autoprefixer = require('gulp-autoprefixer');
-var plumber = require("gulp-plumber");
-//var fileinclude = require('gulp-file-include');
-//var changed = require('gulp-changed');
-//var mediaquerie = require('gulp-combine-media-queries');
-var sourcemaps = require('gulp-sourcemaps');
-var browserSync = require('browser-sync');
-var filter = require('gulp-filter');
-var notify = require('gulp-notify');
-//var cssmin = require('gulp-cssmin');
 
-var paths = {
-	base:'./',
-	scss:'./scss/**/*.scss',
-	js:'./assets/js/**/*.js',
-	html:'./**/*.html',
-	image :'./assets/images/**/*',
-	css:'./assets/css',
-	css_files:'./assets/css/**/*.css',
-	dist:'./dist',
-	php:'./**/*.php'
+const path = {
+      base:'./',
+      scss:'./scss/**/*.scss',
+     image:'./assets/images/**/*',
+        js:'./assets/js/**/*.js',
+       css:'./assets/css',
+ css_files:'./assets/css/**/*.css',
+      html:'./**/*.html',
+       php:'./**/*.php'
 };
 
-
-gulp.task('cssmin', function() {
-	gulp.src(paths.css_files)
-	.pipe(cssmin())
-	.pipe(gulp.dest(paths.css));
+gulp.task('sass', function(){
+    return gulp.src(path.scss)
+    .pipe(plumber({
+      errorHandler: notify.onError({
+        title: "失敗してるよ！",
+        message: "<%= error.message %>"
+        })
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+        outputStyle: 'expanded',
+    }))
+    .pipe(autoprefixer({
+        browsers: ["last 2 versions", "Firefox ESR"],
+    }))
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest(path.css))
+    .pipe(filter(['**', '!**/*.map']))
+    .pipe(browserSync.reload({
+        stream: true
+    }));
 });
 
-
-gulp.task('sass', function() {
-	gulp.src(paths.scss)
-	.pipe(plumber())
-	.pipe(sourcemaps.init())
-	.pipe(sass({
-		errLogToConsole: true,
-//		sourceMap: ['./css/maps'],
-//		sourceComments: 'normal',
-		outputStyle: 'expanded',
-	}))
-//	.pipe(please({
-//		"autoprefixer": { "browsers": ["last 4 versions", "android 2.3"] },
-//		"minifier": false,
-//		"mqpacker": false,
-//		"sourcemaps": true
-//	}))
-	.pipe(autoprefixer({
-		browsers: ["last 2 versions", "Firefox ESR"],
-	}))
-//	.pipe(mediaquerie({log: true}))
-	.pipe(sourcemaps.write('./maps'))
-	.pipe(gulp.dest(paths.css))
-	.pipe(filter(['**', '!**/*.map'])) // Filtering stream to only css files
-	.pipe(browserSync.reload({stream: true}));
+gulp.task('server', function () {
+    browserSync({
+        notify: false,
+        proxy: "http://localhost.izhaori.com/"
+    });
 });
 
-gulp.task('browser-sync', function () {
-	browserSync({
-		notify: false,
-		proxy: "http://hotel-hanayacom.local/"　//ここは毎回書き換える
-	});
+gulp.task('reload', function (done) {
+    browserSync.reload();
+    done();
 });
 
-gulp.task('reload', function () {
-	browserSync.reload();
+gulp.task('watch', function() {
+  gulp.watch(path.scss, gulp.series('sass'));
+  gulp.watch(path.php, gulp.series('reload'));
 });
 
-
-
-gulp.task('default', ['browser-sync'], function () {
-    gulp.watch([paths.php], ['reload']); //phpの時に各
-	gulp.watch(paths.scss, ['sass']); //use Sorcemap false
-//	gulp.watch('./css/*.css', ['reload']); //use Sorcemap true
-});
-
-gulp.task('build', ['sass']);
+gulp.task('default',
+    gulp.parallel('server','watch')
+);

@@ -2,41 +2,16 @@
 <footer>
     <div class="md_footer" role="contentinfo">
 
-        <?php if(!is_page('hanaiori')): ?>
-        <section class="md_footer__booking">
-            <h2 class="gf_raleway fz_36 fw600 md_footer__bookingTtl">BOOKING</h2>
-            <div class="md_footer__bookingRes">
-                <a href="https://hotel-hanaya.rwiths.net/r-withs/tfi0010a.do" target="new" class="fz_15 lt1" onClick="gtag('event', 'click', {'event_category': 'ボタン','event_label': 'footer_reservation', 'value': 1});"><span>ご予約はこちら<i class="fas fa-chevron-right arrow"></i></span></a>
-            </div>
-            <div class="fz_16 md_footer__bookingTel">
-                <p>お電話でのご予約</p>
-                <p><a href="tel:0739-22-3877"><i class="fas fa-phone icon"></i><em>0739-22-3877</em></a></p>
-            </div>
-        </section>
-        <?php endif; ?>
 
-        <section class="md_footer__cont">
-            <h2 class="md_footer__logo">
-                <a href="<?php echo home_url(); ?>">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_wh.svg" alt="ホテル花屋" width="100" class="logo">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_hotel__wh.svg" alt="ホテル" width="100" class="hotel">
-                </a>
-            </h2>
-            <ul class="fz_14 md_footer__address">
-                <li><i class="fas fa-home icon"></i><span>ホテル花屋</span></li>
-                <li><i class="fas fa-map-marker-alt icon"></i><span>〒646-0028　和歌山県田辺市高雄１丁目２番５３号（JR紀伊田辺駅より徒歩３分）</span></li>
-                <li><i class="fas fa-phone icon reverse"></i>: <span>TEL：0739-22-3877</span><span>FAX：0739-25-1400</span></li>
-                <li><i class="fas fa-envelope icon"></i><span>E-mail: info@hotel-hanaya.com</span></li>
+        <nav class="gf_ptsans fw700 fz_14 md_footer__cont">
+            <ul>
+                <li><span>osaka,Japan</span></li>
+                <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption.js"></script></li>
+                <li><a href="">shopping site</a></li>
+                <li><span>古物商許可証番号 第123456789123号</span></li>
             </ul>
-            <div class="md_footer__aside">
-                <p class="fbicon"><a href="https://www.facebook.com/%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%E8%8A%B1%E5%B1%8B-Hotel-Hanaya-272838719485086/"><i class="fab fa-facebook-f"></i></a></p>
-                <p class="gf_raleway fz_14 privacy"><a href="<?php echo home_url(); ?>/privacypolicy/">PRIVACY POLICY</a></p>
-                <p class="fz_13 rtravel">楽天トラベルの予約システムを利用しています。</p>
-                <p class="fz_12 copy">※ 熊野の写真提供：公益社団法人和歌山県観光連盟、熊野本宮観光協会</p>
-                <p class="hanaiori"><a href=""<?php echo home_url(); ?>/hanaiori/" onClick="gtag('event', 'click', {'event_category': 'ボタン','event_label': 'footer_hanaiori__img', 'value': 1});"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_hanaan__wh.svg" alt="ゲストハウス花庵花庵" width="150"></a></p>
-            </div>
-        </section>
-        <p class="fz_12 md_copyright">&copy; HANAYA HOTEL ALL RIGHT RESERVED</p>
+        </nav>
+        <p class="fz_12 md_copyright">2018 &copy; iz</p>
     </div>
 </footer>
 

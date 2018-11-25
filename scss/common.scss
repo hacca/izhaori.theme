@@ -7,29 +7,29 @@
  __site_common
 -----------------------------------------------*/
 
+body {
+        // background-image: url(../images/bg_typo.svg);
+        // background-position: 50% 0;
+        // background-size: 65% auto;
+        // background-attachment: fixed;
+}
+
 .fa {padding-right: .5em;}
 .dnon {display: none;}
 
 .l_row {
-    max-width: 1440px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     &.pd_side {
-        padding: 0 6%;
+        padding: 0 5%;
+    }
+    &.pd_sideItem {
+        padding: 0 7%;
     }
 }
 
 .wrapper {
-    position: relative;
-    max-width: 1600px;
-    margin: 0 auto;
-    padding-top: 80px;
-    @include media(960px) {
-        padding-top: 60px;
-    }
-    &.hanaiori {
-        padding-top: 0!important;
-    }
     img {
         max-width: 100%;
         height: auto;

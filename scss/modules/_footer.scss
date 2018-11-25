@@ -7,8 +7,47 @@
 -----------------------------------------------*/
 
 .md_footer {
-
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 2em 3%;
 }
+
+.md_footer__cont {
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        li {
+            padding: 0 1.5em;
+            &:first-child {
+                padding-left: 0;
+            }
+            a {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}
+.md_copyright {
+}
+
+
+
+
+
+
+
+
+
+
+
 .md_footer__booking {
     @extend %pt2x;
     @extend %pb2x;
@@ -82,22 +121,7 @@
         }
     }
 }
-.md_footer__cont {
-    background: #000;
-    color: #eee;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 3%;
-    @extend %pt3x;
-    padding-bottom: 60px;
-    @include media(979px) {
-        display: block;
-        padding-bottom: 10px;
-    }
-}
+
 .md_footer__logo {
     padding: 0 3%;
     img {
@@ -197,10 +221,7 @@
     }
 }
 
-.md_copyright {
-    text-align: center;
-    padding: 2em 0;
-}
+
 
 
 
@@ -267,7 +288,7 @@
         max-width: 100%;
         height: auto;
         display: block;
-                @include media(540px) {
+        @include media(540px) {
             width: 40%;
         }
     }
