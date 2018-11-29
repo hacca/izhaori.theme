@@ -1,6 +1,18 @@
 (function($) {
     $(function(){
 
+        //ナビ
+        if($('#md_drawer__nav').length){
+            $('#drawer_trigger').on("click", function () {
+                $('#md_drawer__nav').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+            $('#md_drawer__close').on("click", function () {
+                $('#md_drawer__nav').removeClass('active');
+                $('#md_drawer__nav').removeClass('active');
+            });
+        }
+
         // タイポスクロール
         if($('#fixnav').length){
             $(window).scroll(function(){
@@ -14,8 +26,25 @@
             });
         }
 
+        //ツアーページナビ
+        if($('.md_item__sizeUnit span').length){
+            $('.md_item__sizeUnit span.cm').on("click", function () {
+                $('.md_item__sizeUnit span').removeClass('active');
+                $(this).addClass('active');
+                $(this).parents('.md_item__sizeWrap').find('.unit').hide();
+                $(this).parents('.md_item__sizeWrap').find('.cm').show();
+            });
+            $('.md_item__sizeUnit span.inch').on("click", function () {
+                $('.md_item__sizeUnit span').removeClass('active');
+                $(this).addClass('active');
+                $(this).parents('.md_item__sizeWrap').find('.unit').hide();
+                $(this).parents('.md_item__sizeWrap').find('.inch').show();
+            });
+        }
+
+
         // スムーズスクロール
-        var notList = 'a[href^="#content"], #togmenu a[href^="#"], a.remodal-close,a[href^="#0"]';
+        var notList = 'a[href^="#itemlink"], #togmenu a[href^="#"], a.remodal-close,a[href^="#0"]';
         $('a[href^="#"]').not(notList).click(function(){
             var speed = 300;
             if($('#fixnav').length){
@@ -64,53 +93,6 @@
                 }
             }
         })
-
-
-
-        //sidrメニュー
-        $('#drawer_trigger').sidr({
-            name: 'drawer',
-            source: '#drawer_menu',
-            side: 'left',
-            renaming: false,
-            displace: false,
-            onOpen: function() {
-                $('#drawer_trigger').addClass('open');
-                $('#drawer_triggerBtn').addClass('active');
-                $('#drawer_cover').fadeIn(300);
-                $('.sidr_slide__close').show();
-                $("meta[name='viewport']").attr('content','width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=no');
-            },
-            onClose: function() {
-                $('#drawer_trigger').removeClass('open');
-                $('#drawer_triggerBtn').removeClass('active');
-                $('#drawer_cover').fadeOut(300);
-                $('.sidr_slide__close').hide();
-                $("meta[name='viewport']").attr('content','width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=yes');
-            }
-        });
-        $('#drawer_cover').on("click", function () {
-            $.sidr('close', 'drawer');
-        });
-        $('.sidr_slide__close').on("click", function () {
-            $.sidr('close', 'drawer');
-        });
-        $(window).touchwipe({
-            wipeRight: function() {
-            $.sidr('close', 'drawer');
-            },
-            // wipeLeft: function() {
-            //  $.sidr('open', 'drawer');
-            // },
-            preventDefaultEvents: false
-        });
-
-        //ツアーページナビ
-        $('#pnavList li a').on("click", function () {
-            $('#pnavList li a').removeClass('current');
-            $(this).toggleClass('current');
-        });
-
 
 
 

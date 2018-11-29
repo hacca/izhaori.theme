@@ -45,8 +45,32 @@
             </div><!-- md_head__navWrap -->
         </header>
 
+        <div class="md_glnavi__triger" id="drawer_trigger">
+            <span></span><span></span><span></span>
+        </div>
+        <nav class="md_drawer__nav" id="md_drawer__nav">
+            <div class="innr">
+                <ul class="lt1 gf_ptsans md_drawer__navList">
+                    <li><a href="<?php echo home_url(); ?>">HAORI</a></li>
+                    <li><a href="<?php echo home_url(); ?>">JUBAN</a></li>
+                    <li><a href="<?php echo home_url(); ?>">OBI</a></li>
+                    <li><a href="<?php echo home_url(); ?>">CONTACT</a></li>
+                    <li><a href="<?php echo home_url(); ?>" class="cart">STORE</a></li>
+                </ul>
+                <div class="md_drawer__close" id="md_drawer__close"></div>
+            </div>
+        </nav>
 
-                <div class="md_glnavi__triger" id="drawer_trigger">
-                    <span></span><span></span><span></span>
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+
 

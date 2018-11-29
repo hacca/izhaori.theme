@@ -8,7 +8,7 @@
 
 .md_header {
     position: absolute;
-    z-index: 999;
+    z-index: 99;
     left: 0;
     background: #fff;
     width: 120px;
@@ -19,7 +19,6 @@
         top: 0;
         left: -10vw;
         width: 38vw;
-        //max-width: 400px;
         transform: skew(15deg,0);
         height: 100%;
         background: #fff;
@@ -66,7 +65,7 @@ $tri_width: 36px;
     box-sizing: border-box;
     cursor: pointer;
     transition: background 0.2s linear;
-    z-index: 9999;
+    z-index: 999;
     left: 2vw;
     top: 50%;
     transform: translateY(-50%);
@@ -125,88 +124,98 @@ $tri_width: 36px;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.md_head__hlogo {
-    padding-right: 1em;
-    @include media(1100px) {
-        display: none;
+.md_drawer__nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    background: #f6f6f6;
+    z-index: 1000;
+    transform: translateY(-50%);
+    //box-shadow: 0 0 5vh rgba(0,0,0,.2);
+    //border: 1px solid #eee;
+    height: 0;
+    overflow: hidden;
+    &.active {
+        height: inherit;
     }
-    img {
-        height: 50px;
-        display: block;
-        .md_header.fixed & {
-            height: 40px;
-        }
+    .innr {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        padding: 10vh 3%;
     }
 }
-.md_head__cta {
-    flex: 0 1 150px;
-    align-content: stretch;
+
+
+.md_drawer__navList {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    @include media(480px) {
-        flex: 0 1 120px;
-        flex-wrap: nowrap;
-    }
-    a.cta_btn {
-        flex: 0 1 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        background: $c1;
-        text-align: center;
-        height: 50%;
-        color: #eee;
-        text-decoration: none;
-        white-space: nowrap;
-        @include media(768px) {
-            flex: 0 1 50%;
-            height: 100%;
-            letter-spacing: 0;
-            font-size: 12px;
-            line-height: 1.2;
-            span {
-                display: none;
+    li {
+        padding: 0 1em;
+        a {
+            font-size: 16px;
+            display: block;
+            line-height: 1;
+            padding: .5em 1em;
+            text-decoration: none;
+            color: #000;
+            &.cart {
+                padding-left: 40px;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 8px;
+                    background-image: url(../images/shopping-cart-light.svg);
+                    background-size: cover;
+                    width: 22px;
+                    height: 20px;
+                    transform: translateY(-50%);
+                }
             }
-        }
-        @include media(480px) {
-            font-size: 10px;
-        }
-        &.lang {
-            background: #000;
         }
     }
 }
 
-
-
-
-
-
+.md_drawer__close {
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 20px;
+    position: absolute;
+    transform: translateY(-50%);
+    &:after {
+        content: "×";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        color: #888;
+        background: #dedede;
+        border-radius: 50%;
+        text-align: center;
+        transition: all .3s linear;
+        cursor: pointer;
+    }
+    &:focus {
+        &:after {
+            outline: none;
+        }
+    }
+    &:hover {
+        &:after {
+            color: #fff;
+            background: $c1;
+        }
+    }
+}
 
 
 
