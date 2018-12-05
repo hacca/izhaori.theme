@@ -111,7 +111,9 @@
                                         <p class="fz_13 md_item__sizeUnit"><span class="cm active">cm</span> &#x21C4; <span class="inch">Feet inch</span></p>
                                         <div class="md_item__sizeChartWrap">
                                             <figure class="md_item__sizeImg">
-                                                <?php if(has_term(array('haori','juban'),'itemcat')): ?>
+                                                <?php if(has_term('haori','itemcat')): ?>
+                                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart01.png" alt="haori size">
+                                                <?php elseif(has_term('juban','itemcat')): ?>
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart02.png" alt="haori size">
                                                 <?php else: ?>
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart03.png" alt="haori size">
@@ -198,7 +200,33 @@
                                                                 </span>
                                                             </li>
                                                         <?php endif; ?>
-                                                    <?php else: ?>
+                                                    <?php elseif(has_term('obi','itemcat')): ?>
+                                                        <?php if(get_field('item_haori__obihaba')): ?>
+                                                            <li>
+                                                                <span>a</span><span>帯巾</span><span>obihaba</span>
+                                                                <span class="unit cm"><?php the_field('item_haori__obihaba');?>cm</span>
+                                                                <span class="unit inch">
+                                                                    <?php
+                                                                    $cm = get_field('item_haori__obihaba');
+                                                                    $inch = $cm / 2.54;
+                                                                    echo number_format($inch,1) . 'inch';
+                                                                    ?>
+                                                                </span>
+                                                            </li>
+                                                        <?php endif; ?>
+                                                        <?php if(get_field('item_haori__obinagasa')): ?>
+                                                            <li>
+                                                                <span>b</span><span>長さ</span><span>length</span>
+                                                                <span class="unit cm"><?php the_field('item_haori__obinagasa');?>cm</span>
+                                                                <span class="unit inch">
+                                                                    <?php
+                                                                    $cm = get_field('item_haori__obinagasa');
+                                                                    $inch = $cm / 2.54;
+                                                                    echo number_format($inch,1) . 'inch';
+                                                                    ?>
+                                                                </span>
+                                                            </li>
+                                                        <?php endif; ?>
                                                     <?php endif; ?>
                                                 </ul>
                                             </div>
@@ -210,10 +238,12 @@
                                         <?php if(get_field('item_note')): ?>
                                             <p class="note"><?php the_field('item_note');?></p>
                                         <?php endif; ?>
-                                        <?php if(get_field('item_model')): ?>
-                                            <p class="model"><?php the_field('item_model');?></p>
-                                        <?php else: ?>
-                                            <p class="model">モデル身長　女性：165cm 男性：183cm</p>
+                                        <?php if(has_term(array('haori','juban'),'itemcat')): ?>
+                                            <?php if(get_field('item_model')): ?>
+                                                <p class="model"><?php the_field('item_model');?></p>
+                                            <?php else: ?>
+                                                <p class="model">モデル身長　女性：165cm 男性：183cm</p>
+                                            <?php endif; ?>
                                         <?php endif; ?>
                                     </div>
                                 </div>

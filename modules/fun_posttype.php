@@ -68,26 +68,26 @@ function manage_item_posts_columns($columns) {
     $columns = array(
         'cb' => '<input type="checkbox" />',
         'title' => 'タイトル',
-        'articlecat' => 'カテゴリー',
+        'itemcat' => 'カテゴリー',
         'thumbnail' => 'サムネイル',
     );
     return $columns;
 }
-function add_column_article($column_name, $post_id) {
+function add_column_item($column_name, $post_id) {
     if( $column_name == 'thumbnail' ) {
         if(has_post_thumbnail()) {
             the_post_thumbnail('thumbnail', array('style' =>'width:60px;height:auto;'));
         }
     }
-    if( $column_name == 'articlecat' ) {
-        echo get_the_term_list($post_id, 'articlecat','',' , ','');
+    if( $column_name == 'itemcat' ) {
+        echo get_the_term_list($post_id, 'itemcat','',' , ','');
     }
     if( $column_name == 'articletag' ) {
         echo get_the_term_list($post_id, 'articletag','',' , ','');
     }
 }
-add_filter( 'manage_article_posts_columns', 'manage_article_posts_columns' );
-add_action( 'manage_posts_custom_column', 'add_column_article', 10, 2 );
+add_filter( 'manage_item_posts_columns', 'manage_item_posts_columns' );
+add_action( 'manage_posts_custom_column', 'add_column_item', 10, 2 );
 
 
 
