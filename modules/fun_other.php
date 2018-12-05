@@ -15,6 +15,11 @@
         return ((($wp_query->current_post+1) % 2) === 0);
     }
 
+    function is_3th_post(){
+        global $wp_query;
+        return ((($wp_query->current_post+1) % 3) === 0);
+    }
+
 
 //スマートフォンを判別
 function is_mobile(){

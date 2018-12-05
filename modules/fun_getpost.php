@@ -8,11 +8,11 @@
         if ( is_admin() || ! $query->is_main_query() )
         return;
         if ( $query->is_home() ) { // ホーム
-            $query->set( 'post_type', 'article' );
-            $query->set( 'posts_per_page', 4 );
+            $query->set( 'post_type', 'item' );
+            $query->set( 'posts_per_page', -1 );
             $query->set( 'ignore_sticky_posts', 1 );
             $query->set( 'orderby', 'date' );
-            $query->set( 'order', 'desc' );
+            $query->set( 'order', 'asc' );
         return;
         }
         if ( $query->is_post_type_archive( 'item' ) ) {

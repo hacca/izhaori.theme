@@ -1694,8 +1694,16 @@ __common
   display: block;
 }
 
+.md_item__slider .slide_img__main {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 80%;
+          flex: 0 1 80%;
+}
+
 .md_item__slider .slide_img__child {
-  padding-left: 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 17%;
+          flex: 0 1 17%;
 }
 
 .md_item__slider .slide_imgThumb {
@@ -1703,6 +1711,7 @@ __common
   height: 100%;
   display: block;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 @-webkit-keyframes img_fadein {
@@ -1744,6 +1753,11 @@ __common
   display: block;
   font-style: normal;
   font-weight: bold;
+}
+
+.md_item__price .tax {
+  font-size: .8em;
+  padding-left: .5em;
 }
 
 .md_item__storeLink {
@@ -1856,6 +1870,16 @@ __common
           align-items: center;
   padding: .2em 0;
   border-bottom: 1px solid #000;
+}
+
+.md_item__sizeChart .sizeChart li.belt {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.md_item__sizeChart .sizeChart li.belt span:nth-child(2) {
+  width: auto;
 }
 
 .md_item__sizeChart .sizeChart li span {

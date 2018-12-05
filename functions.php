@@ -8,7 +8,7 @@
     add_theme_support('post-thumbnails');
     add_image_size( 'original_thumbsq_lrg', 500, 500, true );
     add_image_size( 'original_4-3__mid', 800, 600, true );
-    add_image_size( 'original_16-10__mid', 1200, 750, true );
+    add_image_size( 'original_16-10__midx', 750, 1200, true );
 
     //追加したサイズの挿入
     add_filter('image_size_names_choose', 'me_display_image_size_names_muploader', 11, 1);
