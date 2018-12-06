@@ -9,7 +9,7 @@
         return;
         if ( $query->is_home() ) { // ホーム
             $query->set( 'post_type', 'item' );
-            $query->set( 'posts_per_page', 20 );
+            $query->set( 'posts_per_page', -1 );
             $query->set( 'ignore_sticky_posts', 1 );
             $query->set( 'orderby', 'date' );
             $query->set( 'order', 'asc' );

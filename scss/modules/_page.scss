@@ -466,17 +466,13 @@ $item_gap__mid : 5%;
 }
 
 
-
-
-
-
 .fancybox-close-small {
     width: 50px;
     height: 50px;
     top: 40px;
     right: 40px;
-    @include media(700px) {
-        top: 0px;
+    @include media(960px) {
+        position: fixed;
     }
     &:after {
         content: "×";
