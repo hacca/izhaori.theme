@@ -50,7 +50,7 @@ __common
         filter: grayscale(100%);
         animation:
             'mv_in' 2s ease .5s 1 normal forwards,
-            'grayscale' 2s ease 3s 1 normal forwards;
+            'grayscale' 1s ease 2s 1 normal forwards;
     }
 }
 
@@ -200,7 +200,7 @@ $item_gap__mid : 5%;
 }
 .md_listItem__ttl {
     position: absolute;
-    bottom: -2em;
+    bottom: -4em;
     right: 0;
     padding: .5em 1em;
     z-index: 3;

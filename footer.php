@@ -20,55 +20,34 @@
 <?php wp_footer(); ?>
 
 
-
-
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js"></script>
 
-<?php if(is_home() || is_page(array('access','hanaiori'))): ?>
-<script src="https://maps.google.com/maps/api/js?key=AIzaSyCHvGKe1x90L9LLcRw1AuAs-ku82oNdscY"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gmap.js"></script>
-<?php endif; ?>
 
-
-
-<?php if(is_page('contact')): ?>
-<script src='https://www.google.com/recaptcha/api.js'></script>
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-<?php if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
-  wpcf7_enqueue_scripts();
-  wpcf7_enqueue_styles();
-}?>
+<?php if(is_home() || is_archive('item') || is_tax('itemcat')): ?>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/aos.js"></script>
 <script>
-(function($) {
-    $(function(){
-          $('#zip').keyup(function(){
-            AjaxZip3.zip2addr(this, '', 'pref', 'address');
-          })
-        //checkbox
-        $("#accept input[type='checkbox']").change(function(){
-            if($(this).is(":checked")){
-                $(this).next('span').children('.chk_target').addClass("c_on");
-            }else{
-                $(this).next('span').children('.chk_target').removeClass("c_on");
-            }
+    (function($) {
+        $(document).ready(function() {
+            $('[data-fancybox]').fancybox();
         });
-    });
-})(jQuery);
+        $(function(){
+            AOS.init({
+                offset: 200,
+                duration: 2500,
+                easing: 'ease-out-back',
+                    //disable: 'mobile'
+                });
+            $('.slide_img__child figure').click(function(){
+                var class_name = $(this).attr("class");
+                var num = class_name.slice(5);
+                $(this).parents().find('.slide_img__parent').removeClass('active');
+                $('.item' + num).addClass('active');
+            });
+        });
+    })(jQuery);
 </script>
 <?php endif; ?>
-
-
-<script>
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
 
 </body>
 </html>

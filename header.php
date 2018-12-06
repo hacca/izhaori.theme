@@ -25,24 +25,22 @@
         gtag('js', new Date());
         gtag('config', 'UA-130009474-1');
     </script>
-
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/aos.js"></script>
-
-
 </head>
 
 <body>
     <div class="wrapper" id="top">
-        <header class="md_header" data-role="header" id="fixnav">
+
+    <?php if (is_home()): ?>
+        <header class="md_header" data-role="header">
             <div class="md_head__navWrap">
                 <h1 class="md_head__logo">
                     <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/iz_logo.svg" alt="IZ" width="60"></a>
                 </h1>
                 <nav class="fz_20 lt1 gf_ptsans md_glnav">
                     <ul>
-                        <li><a href="<?php echo home_url(); ?>">HAORI</a></li>
-                        <li><a href="<?php echo home_url(); ?>">JUBAN</a></li>
-                        <li><a href="<?php echo home_url(); ?>">OBI</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
                     </ul>
                 </nav>
             </div><!-- md_head__navWrap -->
@@ -54,15 +52,41 @@
         <nav class="md_drawer__nav" id="md_drawer__nav">
             <div class="innr">
                 <ul class="lt1 gf_ptsans md_drawer__navList">
-                    <li><a href="<?php echo home_url(); ?>">HAORI</a></li>
-                    <li><a href="<?php echo home_url(); ?>">JUBAN</a></li>
-                    <li><a href="<?php echo home_url(); ?>">OBI</a></li>
-                    <li><a href="<?php echo home_url(); ?>">CONTACT</a></li>
-                    <li><a href="<?php echo home_url(); ?>" class="cart">STORE</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
+                    <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
+                    <li><a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a></li>
                 </ul>
                 <div class="md_drawer__close" id="md_drawer__close"></div>
             </div>
         </nav>
+    <?php else:?>
+        <header class="md_header__common" data-role="header" id="fixnav">
+            <div class="navWrap">
+                <h1 class="md_head__logoCommon">
+                    <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/iz_logo.svg" alt="IZ" width="60"></a>
+                </h1>
+                <div class="md_glnavi__trigerCommon" id="drawer_trigger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div><!-- md_head__navWrap -->
+        </header>
+
+
+        <nav class="md_drawer__nav" id="md_drawer__nav">
+            <div class="innr">
+                <ul class="lt1 gf_ptsans md_drawer__navList">
+                    <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
+                    <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
+                    <li><a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a></li>
+                </ul>
+                <div class="md_drawer__close" id="md_drawer__close"></div>
+            </div>
+        </nav>
+    <?php endif;?>
 
 
 

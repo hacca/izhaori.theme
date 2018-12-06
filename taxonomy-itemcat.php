@@ -3,11 +3,6 @@
 
 <main class="contents_wrapper" id="contents" role="main">
 
-    <div class="md_mv__wrap">
-        <figure class="md_mv__img"></figure>
-    </div>
-
-
     <?php if (have_posts()) : ?>
         <div class="md_pg__wrap typo">
             <div class="l_row pd_sideItem">
@@ -20,10 +15,8 @@
         </div>
     <?php endif; ?>
 
-
 </main><!--.contents_wrapper-->
 
 
 <?php get_footer(); ?>
-
 
