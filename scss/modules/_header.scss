@@ -9,16 +9,22 @@
 .md_header {
     position: absolute;
     z-index: 99;
-    left: 0;
-    background: #fff;
+    top: 0;
+    left: -50vw;
     width: 120px;
     height: 100vh;
+    @include media(900px) {
+        width: 10vw;
+    }
+    &.active {
+        animation: md_header .75s ease 2s 1 normal forwards;
+    }
     &:after {
         content: '';
         position: absolute;
         top: 0;
-        left: -10vw;
-        width: 38vw;
+        left: -35vw;
+        width: 60vw;
         transform: skew(15deg,0);
         height: 100%;
         background: #fff;
@@ -26,7 +32,16 @@
     }
 }
 
-@keyframes glnavi_fix {
+@keyframes md_header {
+    0%{
+        left: -42vw;
+    } 100% {
+        left: 0;
+    }
+}
+
+
+@keyframes md_glnavi__triger {
     0%{
         opacity:0;
     }
@@ -39,11 +54,21 @@
 .md_head__logo {
     order :2;
     padding-bottom: 3vh;
-    padding-left: 2vw;
-    img {
-        height: auto;
-        width: 60px;
+    padding-left: 30px;
+    @include media(600px) {
+        padding-left: 20px;
+    }
+    a {
         display: block;
+        width: 60px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        @include media(600px) {
+            width: 40px;
+        }
     }
 }
 
@@ -56,9 +81,10 @@
     height: 100%;
 }
 
-$tribox_width: 60px;
-$tri_width: 36px;
+
 .md_glnavi__triger {
+    $tribox_width: 60px;
+    $tri_width: 36px;
     position: absolute;
     width: $tribox_width;
     height: $tribox_width;
@@ -66,9 +92,22 @@ $tri_width: 36px;
     cursor: pointer;
     transition: background 0.2s linear;
     z-index: 999;
-    left: 2vw;
-    top: 50%;
+    left: 30px;
+    top: 50vh;
     transform: translateY(-50%);
+    opacity: 0;
+    @include media(900px) {
+        @media only screen and (orientation:landscape){
+            top: 0;
+            transform: translateY(0);
+        }
+    }
+    @include media(600px) {
+        left: 10px;
+    }
+    &.active {
+        animation: md_glnavi__triger .75s ease 2.5s 1 normal forwards;
+    }
     &:hover {
     }
     span {
@@ -96,7 +135,19 @@ $tri_width: 36px;
 
 .md_glnav {
     width: 100%;
-    padding-left: 2vw;
+    padding-left: 30px;
+    @include media(1024px) {
+        font-size: 18px;
+    }
+    @include media(767px) {
+        font-size: 16px;
+    }
+    @include media(600px) {
+        font-size: 14px;
+    }
+    @include media(600px) {
+        padding-left: 20px;
+    }
     ul {
         display: flex;
         flex-direction: row;
@@ -106,13 +157,13 @@ $tri_width: 36px;
         padding-bottom: 5vh;
         li {
             width: 100%;
-            padding: .5em 0;
+            padding: 1vh 0;
         }
         a {
             color: #000;
             text-decoration: none;
             display: block;
-            padding: .5em 0;
+            padding: 1vh 0;
             padding-left: 0;
             white-space: nowrap;
             letter-spacing: 0;
@@ -121,29 +172,44 @@ $tri_width: 36px;
     }
 }
 
-
-
-
+@keyframes md_drawer__nav {
+    0%{
+        max-height: 0;
+    } 100% {
+        max-height: 400px;
+    }
+}
 .md_drawer__nav {
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 50vh;
     left: 0;
     width: 100%;
     background: #f6f6f6;
     z-index: 1000;
     transform: translateY(-50%);
-    //box-shadow: 0 0 5vh rgba(0,0,0,.2);
-    //border: 1px solid #eee;
-    height: 0;
+    // box-shadow: 0 0 10vh rgba(0,0,0,.15);
+    // border: 1px solid #eee;
+    max-height: 0;
     overflow: hidden;
     &.active {
-        height: inherit;
+        animation: md_drawer__nav .5s ease 0s 1 normal forwards;
     }
     .innr {
         max-width: 1200px;
         margin: 0 auto;
         position: relative;
         padding: 10vh 3%;
+        @include media(900px) {
+            @media only screen and (orientation:landscape){
+                padding-top: 15vh;
+                padding-bottom: 15vh;
+            }
+        }
+        @include media(600px) {
+            padding-top: 15vh;
+            padding-bottom: 15vh;
+            padding-left: 20vw;
+        }
     }
 }
 
@@ -154,8 +220,15 @@ $tri_width: 36px;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    @include media(600px) {
+        flex-wrap: wrap;
+    }
     li {
         padding: 0 1em;
+        @include media(600px) {
+            flex: 0 1 100%;
+            padding: .5em 0;
+        }
         a {
             font-size: 16px;
             display: block;
@@ -163,6 +236,12 @@ $tri_width: 36px;
             padding: .5em 1em;
             text-decoration: none;
             color: #000;
+            @include media(767px) {
+                font-size: 14px;
+            }
+            @include media(660px) {
+                font-size: 12px;
+            }
             &.cart {
                 padding-left: 40px;
                 position: relative;
@@ -176,6 +255,9 @@ $tri_width: 36px;
                     width: 22px;
                     height: 20px;
                     transform: translateY(-50%);
+                    @include media(767px) {
+                        font-size: 18px;
+                    }
                 }
             }
         }
@@ -189,6 +271,11 @@ $tri_width: 36px;
     right: 20px;
     position: absolute;
     transform: translateY(-50%);
+    @include media(767px) {
+        top: 15px;
+        right: 15px;
+        transform: translateY(0%);
+    }
     &:after {
         content: "×";
         position: absolute;
@@ -203,6 +290,11 @@ $tri_width: 36px;
         text-align: center;
         transition: all .3s linear;
         cursor: pointer;
+        @include media(900px) {
+            width: 40px;
+            height: 40px;
+            line-height: 38px;
+        }
     }
     &:focus {
         &:after {

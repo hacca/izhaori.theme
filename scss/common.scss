@@ -7,7 +7,8 @@
  __site_common
 -----------------------------------------------*/
 
-body {
+.wrapper {
+    position: relative;
 }
 
 .fa {padding-right: .5em;}
@@ -22,6 +23,14 @@ body {
     }
     &.pd_sideItem {
         padding: 0 7%;
+        @include media(1200px) {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        @include media(480px) {
+            padding-left: 9%;
+            padding-right: 9%;
+        }
     }
 }
 

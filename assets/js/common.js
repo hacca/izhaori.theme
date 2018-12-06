@@ -5,7 +5,6 @@
         if($('#md_drawer__nav').length){
             $('#drawer_trigger').on("click", function () {
                 $('#md_drawer__nav').toggleClass('active');
-                $(this).toggleClass('active');
             });
             $('#md_drawer__close').on("click", function () {
                 $('#md_drawer__nav').removeClass('active');

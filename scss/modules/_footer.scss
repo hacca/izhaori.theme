@@ -25,6 +25,10 @@
         align-items: center;
         li {
             padding: 0 1.5em;
+            @include media(768px) {
+                flex: 0 1 100%;
+                padding: .5em 0;
+            }
             &:first-child {
                 padding-left: 0;
             }
@@ -36,6 +40,10 @@
     }
 }
 .md_copyright {
+    @include media(900px) {
+        padding-top: 2em;
+        flex: 0 1 100%;
+    }
 }
 
 

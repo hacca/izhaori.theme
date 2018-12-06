@@ -1,14 +1,12 @@
 
 <footer>
     <div class="md_footer" role="contentinfo">
-
-
         <nav class="gf_ptsans fw700 fz_14 md_footer__cont">
             <ul>
                 <li><span>osaka,Japan</span></li>
                 <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption.js"></script></li>
                 <li><a href="">shopping site</a></li>
-                <li><span>古物商許可証番号 第123456789123号</span></li>
+                <li><span>古物商許可証番号 第621220182615号</span></li>
             </ul>
         </nav>
         <p class="fz_12 md_copyright">2018 &copy; iz</p>

@@ -18,15 +18,28 @@ __common
 %pb5x {padding-bottom: 100px;}
 
 
+@keyframes mv_in {
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
 
-
-.md_mv__wrap {}
+.md_mv__wrap {
+    height: 100vh;
+}
 
 .md_mv__img {
     background-image: url(../images/mv_01.jpg);
     background-position: center center;
     background-size: cover;
     height: 100vh;
+    opacity: 0;
+    transition: background 1s linear;
+    &.active {
+        animation: mv_in 2s ease .5s 1 normal forwards;
+    }
 }
 
 .md_pg__wrap {
@@ -48,29 +61,71 @@ __common
     align-items: flex-start;
     padding-top: 160px;
     padding-bottom: 100vh;
+    @include media(960px) {
+        padding-top: 80px;
+    }
+    @include media(660px) {
+        padding-top: 60px;
+    }
     &::after {
         content:'';
         display: block;
-        width:%;
+        width: 28%;
+        @include media(1200px) {
+            width: 30%;
+        }
+        @include media(660px) {
+            display: none;
+        }
     }
 }
 
 $item_gap : 7%;
+$item_gap__mid : 5%;
+
 .md_listItem {
     flex: 0 1 28%;
     margin-top: 0px;
     margin-bottom: -$item_gap * 2;
     position: relative;
+    @include media(1200px) {
+        flex: 0 1 30%;
+        margin-bottom: -$item_gap__mid * 2;
+    }
+    @include media(660px) {
+        flex: 0 1 48%;
+        margin-bottom: $item_gap__mid;
+    }
+    @include media(480px) {
+        flex: 0 1 44.5%;
+        margin-bottom: 10%;
+    }
     &:nth-child(3n + 1) {
         margin-top: $item_gap;
+        @include media(1200px) {
+            margin-top: $item_gap__mid;
+        }
+        @include media(660px) {
+            margin-top: 0;
+        }
     }
     &:nth-child(3n + 2) {
     }
     &:nth-child(3n + 3) {
         margin-top: $item_gap * 3;
+        @include media(1200px) {
+            margin-top: $item_gap__mid * 3;
+        }
+        @include media(660px) {
+            margin-top: 0;
+        }
     }
     &:nth-child(5n) {
         box-shadow: 25px 25px 50px rgba(0,0,0,.2);
+        @include media(660px) {
+            box-shadow: none;
+            flex: 0 1 100%;
+        }
     }
     a {
         text-decoration: none;
@@ -143,27 +198,78 @@ $item_gap : 7%;
 
 .modal_wrapper {
     width: 100%;
-    background: #eee;
+
     max-width: 1200px;
     display: none;
+}
+.fancybox-slide>* {
+    background: transparent;
 }
 .md_item {
     margin: 0 auto;
     padding: 40px;
+    background: #eee;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    @include media(660px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 }
 .md_item__imgWrap {
     flex: 0 1 54%;
     width: 50%;
+    @include media(960px) {
+        margin: 0 auto;
+    }
+    @include media(768px) {
+        flex: 0 1 100%;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 500px;
+    }
 }
 .md_item__contentsWrap {
     flex: 0 1 40%;
     padding-top: 20px;
+    @include media(960px) {
+        flex: 0 1 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .l_head {
+        @include media(960px) {
+            flex: 0 1 40%;
+        }
+        @include media(768px) {
+            flex: 0 1 100%;
+        }
+    }
+    .l_size {
+        @include media(960px) {
+            flex: 0 1 56%;
+        }
+        @include media(768px) {
+            flex: 0 1 70%;
+            margin: 0 auto;
+        }
+        @include media(660px) {
+            flex: 0 1 100%;
+        }
+    }
+    .l_note {
+        @include media(960px) {
+            flex: 0 1 100%;
+            padding-top: 20px;
+        }
+    }
 }
 
 .md_item__slider {
@@ -285,17 +391,33 @@ $item_gap : 7%;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: flex-end;
+    @include media(480px) {
+        flex-wrap: wrap;
+    }
 }
 .md_item__sizeImg {
     flex: 0 1 50%;
+    @include media(480px) {
+        flex: 0 1 100%;
+    }
     img {
         max-width: 100%;
         height: auto;
         display: block;
+        @include media(480px) {
+            width: 80%;
+            max-width: 240px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+        }
     }
 }
 .md_item__sizeChart {
     flex: 0 1 45%;
+    @include media(480px) {
+        flex: 0 1 100%;
+        margin: 0 auto;
+    }
     .sizeChart {
         li {
             display: flex;
@@ -351,8 +473,11 @@ $item_gap : 7%;
 .fancybox-close-small {
     width: 50px;
     height: 50px;
-    top: 20px;
-    right: 20px;
+    top: 40px;
+    right: 40px;
+    @include media(700px) {
+        top: 0px;
+    }
     &:after {
         content: "×";
         position: absolute;
