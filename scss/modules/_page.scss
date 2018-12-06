@@ -483,8 +483,8 @@ $item_gap__mid : 5%;
     height: 50px;
     top: 40px;
     right: 40px;
-    @include media(960px) {
-        position: fixed;
+    @include media(700px) {
+        top: 0;
     }
     &:after {
         content: "×";

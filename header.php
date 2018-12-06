@@ -31,7 +31,7 @@
     <div class="wrapper" id="top">
 
     <?php if (is_home()): ?>
-        <header class="md_header" data-role="header">
+        <header class="md_header" data-role="header" id="fixnav">
             <div class="md_head__navWrap">
                 <h1 class="md_head__logo">
                     <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/iz_logo.svg" alt="IZ" width="60"></a>
