@@ -15,7 +15,7 @@
 
 </div><!-- .wrapper-->
 
-<div class="close_wrap"></div>
+<div class="close_wrap" id="drawerclose"></div>
 
 <?php wp_footer(); ?>
 
