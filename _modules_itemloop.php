@@ -9,6 +9,12 @@
             echo wp_get_attachment_image($attachment_id, "original_16-10__midx", false, array('class' => 'md_listItem__img'));
         }?>
         <h3 class="gf_ptsans fz_15 md_listItem__ttl"><?php the_title();?></h3>
+        <?php if (get_field('item_sold__out')) {
+            $sold_out__flag = get_field('item_sold__out', $post->ID);
+            if ($sold_out__flag === '売り切れ') {
+                echo '<span class="md_soldout">SOLD OUT</span>';
+            }
+        }?>
     </a>
     <div id="item<?php echo get_the_ID(); ?>" class="modal_wrapper">
         <div class="md_item">
@@ -71,11 +77,21 @@
                         }
                         ?>
                     <?php endif;?>
-                    <?php if (get_field('item_url')): ?>
-                        <div class="fz_16 gf_ptsans md_item__storeLink">
-                            <a href="<?php esc_url(the_field('item_url'));?>"><span>store</span><i class="fas fa-caret-right icon"></i></a>
-                        </div>
-                    <?php endif;?>
+
+
+                    <?php
+                        $sold_out__flag = get_field('item_sold__out', $post->ID);
+                        if ($sold_out__flag === '売り切れ') {
+                            echo '<div class="fz_16 gf_ptsans md_item__storeLink"><span class="md_soldout__price">SOLD OUT</span></div>';
+                        } else {
+                            if (get_field('item_url')) {
+                                $item_url = get_field('item_url', $post->ID);
+                                echo '<div class="fz_16 gf_ptsans md_item__storeLink"><a href="' . esc_url($item_url) . '"><span>store</span><i class="fas fa-caret-right icon"></i></a></div>';
+                            }
+                        }
+                    ?>
+
+
                     <?php if (get_field('item_textarea')): ?>
                         <div class="fz_15 md_item__txtarea"><?php the_field('item_textarea');?></div>
                     <?php endif;?>

@@ -191,6 +191,32 @@ $item_gap__mid : 5%;
         }
     }
 }
+
+.md_soldout {
+    position: absolute;
+    background: #ccc;
+    color: #fff;
+    display: inline-block;
+    box-sizing: border-box;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 1;
+    padding: .5em .5em;
+}
+
+.md_soldout__price {
+    background: #ccc;
+    color: #fff;
+    display: inline-block;
+    box-sizing: border-box;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 1;
+    padding: .5em .5em;
+}
+
 .md_listItem__img {
     width: 100%;
     max-width: 100%;
@@ -334,6 +360,22 @@ $item_gap__mid : 5%;
         }
     }
 }
+
+.md_tax__ttl {
+    position: absolute;
+    left: 5%;
+    top: 3%;
+    @include media(960px) {
+        left: 100px;
+        top: 30px;
+    }
+    @include media(660px) {
+        left: 80px;
+        top: 18px;
+    }
+}
+
+
 .md_item__ttl {
     line-height: 1.5;
     margin-bottom: .5em;
@@ -366,6 +408,19 @@ $item_gap__mid : 5%;
             box-sizing: border-box;
             vertical-align: top;
             margin-top: -1px;
+            padding-left: 34px;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 8px;
+                background-image: url(../images/shopping-cart-light.svg);
+                background-size: cover;
+                width: 18px;
+                height: 16px;
+                transform: translateY(-50%);
+            }
         }
         .icon {
             padding-left: .5em;
@@ -474,6 +529,9 @@ $item_gap__mid : 5%;
         &:last-child {
             margin-bottom: 0;
         }
+    }
+    strong {
+        color: #c1362b;
     }
 }
 

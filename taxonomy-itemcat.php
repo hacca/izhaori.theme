@@ -1,7 +1,14 @@
-<?php get_header(); ?>
 
+<?php get_header();
+if(have_posts()) {
+    $type = get_post_type_object($post->post_type);
+    $term_object = get_queried_object();
+}
+?>
 
 <main class="contents_wrapper" id="contents" role="main">
+
+<div class="fz_18 lt1 gf_ptsans md_tax__ttl"><?php echo $term_object->name;?></div>
 
     <?php if (have_posts()) : ?>
         <div class="md_pg__wrap typo">

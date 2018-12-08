@@ -27,15 +27,15 @@
         return;
         }
         if ( $query->is_post_type_archive( 'item' ) ) {
-            $query->set( 'posts_per_page', 8 );
-            $query->set( 'ignore_sticky_posts', -1 );
+            $query->set( 'posts_per_page', -1 );
+            $query->set( 'ignore_sticky_posts', 1 );
             $query->set( 'orderby', 'date' );
             $query->set( 'order', 'desc' );
             return;
         }
         if ( $query->is_tax( 'itemcat','' ) ) {
-            $query->set( 'posts_per_page', 8 );
-            $query->set( 'ignore_sticky_posts', -1 );
+            $query->set( 'posts_per_page', -1 );
+            $query->set( 'ignore_sticky_posts', 1 );
             $query->set( 'orderby', 'date' );
             $query->set( 'order', 'desc' );
             return;
