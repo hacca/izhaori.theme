@@ -56,7 +56,11 @@
                     <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
                     <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
-                    <li><a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a></li>
+                    <li>
+                        <a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a>
+                        <a href="https://www.facebook.com/izhaori/" target="new" class="icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/izhaori8635/" target="new" class="icon"><i class="fab fa-instagram"></i></a>
+                    </li>
                 </ul>
                 <div class="md_drawer__close" id="md_drawer__close"></div>
             </div>

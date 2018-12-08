@@ -956,7 +956,7 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .md_drawer__nav .innr {
     padding-top: 15vh;
     padding-bottom: 15vh;
@@ -982,7 +982,7 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
           align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .md_drawer__navList {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -991,9 +991,10 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
 
 .md_drawer__navList li {
   padding: 0 1em;
+  white-space: nowrap;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .md_drawer__navList li {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
@@ -1023,9 +1024,22 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
   }
 }
 
+.md_drawer__navList li a.icon {
+  padding-right: 0;
+  padding-left: 0;
+  margin: 0 10px;
+  font-size: 18px;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .md_drawer__navList li a.cart {
   padding-left: 40px;
   position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .md_drawer__navList li a.cart:after {
@@ -1057,7 +1071,7 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
           transform: translateY(-50%);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 960px) {
   .md_drawer__close {
     top: 15px;
     right: 15px;
