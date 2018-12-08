@@ -226,6 +226,19 @@
                     </section>
                 </div>
                 <div class="l_note">
+                    <?php
+                        $obi_flag = get_field('item_obi__status', $post->ID);
+                        if ($obi_flag === '帯ベルトは付いていません') {
+                            echo '<div class="fz_12 md_obibelt"><span>帯ベルトは付いていません。</span>';
+                            if (get_field('item_obi__url')) {
+                                $obi_url = get_field('item_obi__url', $post->ID);
+                                echo '<span><a href="' . esc_url($obi_url) . '">使用している帯ベルトはこちら</span></a></div>';
+                            } else {
+                                echo '</div>';
+                            }
+                        }
+                    ?>
+
                     <div class="fz_12 md_item__notice">
                         <p class="washing">お洗濯について | <strong>ご自宅ではお洗濯できません。</strong>シルク専用のクリーニングをご利用ください。もしも、食べこぼしや目立つ汚れが付いた場合は、時間を置かずにシルク取り扱いクリーニング店へご相談ください。</p>
                         <p class="used">ご注意 | ユーズド製品を加工しているため、とても目立つようなものは無いよう気を付けておりますが、多少のシミや汚れについては何卒ご容赦ください。</p>

@@ -2433,6 +2433,7 @@ __common
   padding: 20px;
   padding-top: 10px;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .md_item__sizeUnit {
@@ -2581,7 +2582,7 @@ __common
 }
 
 .md_item__notice {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .md_item__notice p {

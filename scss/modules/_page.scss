@@ -436,6 +436,7 @@ $item_gap__mid : 5%;
     padding: 20px;
     padding-top: 10px;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 .md_item__sizeUnit {
     text-align: right;
@@ -523,7 +524,7 @@ $item_gap__mid : 5%;
     }
 }
 .md_item__notice {
-    margin-top: 20px;
+    margin-top: 10px;
     p {
         margin-bottom: .75em;
         &:last-child {
