@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/default.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans|Noto+Serif+JP" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/aos.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
@@ -41,6 +41,7 @@
                         <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
+                        <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
                     </ul>
                 </nav>
             </div><!-- md_head__navWrap -->
@@ -55,11 +56,12 @@
                     <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
+                    <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
                     <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
                     <li>
                         <a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a>
-                        <a href="https://www.facebook.com/izhaori/" target="new" class="icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/izhaori8635/" target="new" class="icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/izhaori/" target="new" class="snsicon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/izhaori8635/" target="new" class="snsicon"><i class="fab fa-instagram"></i></a>
                     </li>
                 </ul>
                 <div class="md_drawer__close" id="md_drawer__close"></div>
@@ -84,7 +86,8 @@
                     <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
-                    <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
+                    <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
+                    <li class="contact"><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
                     <li><a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a></li>
                 </ul>
                 <div class="md_drawer__close" id="md_drawer__close"></div>
