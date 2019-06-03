@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/aos.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20190404" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20190604" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130009474-1"></script>
@@ -28,13 +28,7 @@
 </head>
 
 <body>
-    <div class="maintenace">
-        <div>
-            <p>日頃よりizサイトをご利用いただき、誠にありがとうございます。<br>現在リニューアル中のため、こちらのページはご利用いただけません。</p>
-            <p>ご不便をお掛け致しますが、ご理解いただきますようお願い申し上げます。<br>尚、リニューアルオープンは2019年5月ごろを予定しております。</p>
-            <p>izhaori.com</p>
-        </div>
-    </div>
+
     <div class="wrapper" id="top">
 
     <?php if (is_home()): ?>
@@ -57,23 +51,7 @@
         <div class="md_glnavi__triger" id="drawer_trigger">
             <span></span><span></span><span></span>
         </div>
-        <nav class="md_drawer__nav" id="md_drawer__nav">
-            <div class="innr">
-                <ul class="lt1 gf_ptsans md_drawer__navList">
-                    <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
-                    <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
-                    <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
-                    <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
-                    <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
-                    <li>
-                        <a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a>
-                        <a href="https://www.facebook.com/izhaori/" target="new" class="snsicon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/izhaori8635/" target="new" class="snsicon"><i class="fab fa-instagram"></i></a>
-                    </li>
-                </ul>
-                <div class="md_drawer__close" id="md_drawer__close"></div>
-            </div>
-        </nav>
+
     <?php else:?>
         <header class="md_header__common" data-role="header" id="fixnav">
             <div class="navWrap">
@@ -86,6 +64,7 @@
             </div><!-- md_head__navWrap -->
         </header>
 
+    <?php endif;?>
 
         <nav class="md_drawer__nav" id="md_drawer__nav">
             <div class="innr">
@@ -94,14 +73,21 @@
                     <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
                     <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
-                    <li class="contact"><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script></li>
-                    <li><a href="https://izhaori.official.ec/" target="new" class="cart">STORE</a></li>
+                    <li>
+                        <a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a>
+                    </li>
+                    <li>
+                        <a href="https://izhaori.official.ec/" target="new" class="cart" rel="noopener noreferrer">ONLINE STORE</a>
+                    </li>
+                    <li class="flex">
+                        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption_c.js"></script>
+                        <a href="https://www.facebook.com/izhaori/" target="new" class="snsicon" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/izhaori8635/" target="new" class="snsicon" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    </li>
                 </ul>
                 <div class="md_drawer__close" id="md_drawer__close"></div>
             </div>
         </nav>
-    <?php endif;?>
-
 
 
 

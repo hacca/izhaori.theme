@@ -565,6 +565,88 @@ $item_gap__mid : 5%;
 }
 
 
+/*--------
+__shop
+-----------------------------------------------*/
+.pg_shop {
+    min-height: 100vh;
+    padding: 40px 10% 80px 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items:: center;
+    @include media(960px) {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
+
+.pg_shop__info {
+    margin-top: 80px;
+    padding-left: 3em;
+    border-left: 3px solid #000;
+    @include media(540px) {
+        padding-left: 1.5em;
+    }
+    .ttl {
+        margin-bottom: 1em;
+        font-size: 18px;
+        @include media(767px) {
+            font-size: 16px;
+        }
+    }
+    a.googlemap {
+        text-decoration: none;
+        display: inline-block;
+        box-sizing: border-box;
+        white-space: nowrap;
+        line-height: 1;
+        padding : .5em .75em;
+        color: $google_color;
+        transition: all .1s linear;
+        &:hover {
+            transform: scale(1.3);
+        }
+    }
+}
+.pg_shop__img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px 0;
+    a {
+        display: block;
+        flex: 0 1 24%;
+    }
+    img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.pg_shop__mapFlame {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    .innr {
+        height: 0;
+        padding-top: 50%;
+        max-height: 360px;
+        @include media(660px) {
+            padding-top: 100%;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
 
 /*--------
 __concept

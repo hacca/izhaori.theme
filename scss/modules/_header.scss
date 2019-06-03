@@ -272,13 +272,13 @@
         margin: 0 auto;
         position: relative;
         padding: 10vh 3%;
-        @include media(900px) {
+        @include media(1024px) {
             @media only screen and (orientation:landscape){
                 padding-top: 15vh;
                 padding-bottom: 15vh;
             }
         }
-        @include media(767px) {
+        @include media(1024px) {
             padding-top: 15vh;
             padding-bottom: 15vh;
             padding-left: 20vw;
@@ -293,20 +293,24 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    @include media(767px) {
+    @include media(1024px) {
         flex-wrap: wrap;
     }
     li {
-        padding: 0 .5em;
+        padding: 0 .35em;
         white-space: nowrap;
-        @include media(767px) {
+        @include media(1024px) {
             flex: 0 1 100%;
             padding: .5em 0;
         }
-        &.contact {
-            padding: 0 0em;
-            @include media(767px) {
-                padding: .5em 0;
+        &.flex {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            @include media(1024px) {
+                padding-left: 3px;
             }
         }
         a {
@@ -316,6 +320,9 @@
             padding: .5em 1em;
             text-decoration: none;
             color: #000;
+            @include media(1024px) {
+                padding-left: 8px;
+            }
             @include media(767px) {
                 font-size: 14px;
             }
@@ -323,30 +330,34 @@
                 font-size: 12px;
             }
             &.snsicon {
-                padding-right: 0;
-                padding-left: 0;
-                margin: 0 10px;
+                padding-right: 5px;
+                padding-left: 5px;
+                margin-right: 10px;
+                width: 26px;
                 font-size: 18px;
                 display: inline-block;
+                text-align: center;
             }
             &.icon {
                 position: relative;
-                display: block;
                 box-sizing: border-box;
                 padding-right: 0;
-                padding-left: 50px;
+                padding-left: 0;
                 height: 40px;
-                @include media(767px) {
-                    display: inline-block;
-                    padding-left: 40px;
-                    height: inherit;
-                }
+                display: block;
+                width: 36px;
+                margin-right: 10px;
+                // @include media(960px) {
+                //     display: inline-block;
+                //     padding-left: 40px;
+                //     height: inherit;
+                // }
                 span {
                     display: none;
-                    @include media(767px) {
-                        display: inline;
-                        font-size: 14px;
-                    }
+                    // @include media(767px) {
+                    //     display: inline;
+                    //     font-size: 14px;
+                    // }
                 }
                 &:after {
                     content: '';
@@ -357,16 +368,16 @@
                     background-size: 20px;
                     background-repeat: no-repeat;
                     background-position: center center;
-                    width: 50px;
+                    width: 36px;
                     height: 40px;
-                    @include media(767px) {
-                        width: 23px;
-                        height: 20px;
-                        top: 50%;
-                        left: 8px;
-                        transform: translateY(-50%);
-                        background-position: right center;
-                    }
+                    // @include media(767px) {
+                    //     width: 23px;
+                    //     height: 20px;
+                    //     top: 50%;
+                    //     left: 8px;
+                    //     transform: translateY(-50%);
+                    //     background-position: right center;
+                    // }
                 }
             }
 
@@ -384,6 +395,26 @@
                     background-size: cover;
                     width: 22px;
                     height: 20px;
+                    transform: translateY(-50%);
+                    @include media(767px) {
+                        font-size: 18px;
+                    }
+                }
+            }
+            &.shop {
+                padding-left: 40px;
+                position: relative;
+                display: inline-block;
+                box-sizing: border-box;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 8px;
+                    background-image: url(../images/store-alt-light.svg);
+                    background-size: cover;
+                    width: 23px;
+                    height: 19px;
                     transform: translateY(-50%);
                     @include media(767px) {
                         font-size: 18px;

@@ -5,7 +5,8 @@
             <ul>
                 <li><span>osaka,Japan</span></li>
                 <li><script src="<?php echo get_template_directory_uri(); ?>/assets/js/encryption.js"></script></li>
-                <li><a href="">shopping site</a></li>
+                <li><a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a></li>
+                <li><a href="https://izhaori.official.ec/" target="new" rel="noopener noreferrer">ONLINE STORE</a></li>
                 <li><span>古物商許可証番号 第621220182615号</span></li>
             </ul>
         </nav>
