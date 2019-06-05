@@ -111,7 +111,7 @@
     top: 50vh;
     transform: translateY(-50%);
     opacity: 0;
-    @include media(900px) {
+    @include media(1200px) {
         @media only screen and (orientation:landscape){
             top: 0;
             transform: translateY(0);
@@ -209,8 +209,8 @@
 .md_glnav {
     width: 100%;
     padding-left: 30px;
-    @include media(1024px) {
-        font-size: 18px;
+    @include media(1280px) {
+        font-size: 16px;
     }
     @include media(767px) {
         font-size: 16px;
@@ -227,10 +227,10 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         align-items: flex-start;
-        padding-bottom: 5vh;
+        padding-bottom: 20px;
         li {
             width: 100%;
-            padding: 1vh 0;
+            padding: 5px 0;
         }
         a {
             color: #000;
@@ -241,6 +241,23 @@
             white-space: nowrap;
             letter-spacing: 0;
             line-height: 1;
+            &.shop {
+                padding-left: 30px;
+                position: relative;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 0px;
+                    background-image: url(../images/store-alt-light.svg);
+                    background-size: cover;
+                    background-position: left center;
+                    width: 23px;
+                    height: 19px;
+                    transform: translateY(-50%);
+                }
+            }
+
         }
     }
 }

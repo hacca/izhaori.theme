@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/aos.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20190604" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20190605" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130009474-1"></script>
@@ -43,6 +43,7 @@
                         <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
                         <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
+                        <li><a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a></li>
                     </ul>
                 </nav>
             </div><!-- md_head__navWrap -->
