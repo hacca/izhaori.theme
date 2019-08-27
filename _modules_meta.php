@@ -1,4 +1,4 @@
-<?php $title_default = '' ; ?>
+<?php $title_default = 'IZ HAORI' ; ?>
 
 <?php
 if(!empty($post->post_content)){
@@ -15,7 +15,7 @@ $desc = str_replace(array("\r\n","\r","\n"," ","　"," "), '', $desc );
 $desc = trim($desc);
 ?>
 <?php if (is_home() || is_front_page()) : ?>
-<meta name="description" content="" />
+<meta name="description" content="絹織物を中心とした日本の高品質の着物を素材として、コートやガウンのようなHAORIを中心に、新たなデザインに作り変えています。一品一品素材である着物そのものの形状美や雰囲気を損なわずに、新たな息吹を吹き込んで作っています。" />
 <title><?php echo $title_default ; ?></title>
 
 <?php else: ?>

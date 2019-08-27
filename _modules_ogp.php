@@ -21,13 +21,13 @@
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <?php if( is_home()):?>
-<meta property="og:title" content="iz haori" />
+<meta property="og:title" content="IZ HAORI" />
 <meta property="og:description" content="絹織物を中心とした日本の高品質の着物を素材として、コートやガウンのようなHAORIを中心に、新たなデザインに作り変えています。一品一品素材である着物そのものの形状美や雰囲気を損なわずに、新たな息吹を吹き込んで作っています。"/>
 <?php else: ?>
 <meta property="og:title" content="<?php bloginfo('name'); ?> <?php the_title(); ?>" />
 <meta property="og:description" content="<?php bloginfo('name'); ?>の<?php the_title(); ?>ページです。<?php echo mb_substr($desc, 0, 160); ?>"/>
 <?php endif; ?>
-<meta property="og:site_name" content="iz haori" />
+<meta property="og:site_name" content="IZ HAORI" />
 <meta property="fb:app_id" content="618071618595688" />
 
 
