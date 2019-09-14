@@ -90,6 +90,34 @@ add_filter( 'manage_item_posts_columns', 'manage_item_posts_columns' );
 add_action( 'manage_posts_custom_column', 'add_column_item', 10, 2 );
 
 
+add_action( 'init', 'create_post_type_info' );
+function create_post_type_info() {
+    $args = array(
+        'label' => 'お知らせ',
+        'labels' => array(
+            'singular_name' => 'お知らせ',
+            'add_new_item' => 'お知らせの新規作成',
+            'add_new' => '新規作成',
+            'new_item' => '新規作成',
+            'view_item' => '記事を表示',
+            'not_found' => '見つかりません',
+            'not_found_in_trash' => 'ゴミ箱にはありません',
+            'search_items' => '検索',
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'query_var' => true,
+        'hierarchical' => false,
+        'rewrite' => array( 'slug' => 'info', 'with_front' =>false ),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-rss',
+        'supports' => array('title'),
+        'has_archive' => false,
+    );
+    register_post_type('info', $args);
+}
+
+
 
 
 //   ---------------------------------------

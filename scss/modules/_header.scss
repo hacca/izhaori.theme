@@ -5,18 +5,22 @@
 /*-----------------------------------------------
  __header
 -----------------------------------------------*/
-
 .md_header {
     position: absolute;
     z-index: 99;
     top: 0;
     left: -50vw;
     width: 120px;
-    height: 100vh;
     @include media(900px) {
         width: 10vw;
     }
+    @include media(600px) {
+        min-height: 500px;
+    }
     &.active {
+        animation: md_header .75s ease 1 normal forwards;
+    }
+    &.animate {
         animation: md_header .75s ease 3s 1 normal forwards;
     }
     &:after {
@@ -94,36 +98,50 @@
     justify-content: flex-end;
     align-items: flex-start;
     height: 100%;
+    @include media(660px) {
+        padding-bottom: 20px;
+    }
+    @include media(480px) {
+        padding-bottom: 40px;
+    }
 }
-
 
 .md_glnavi__triger {
     $tribox_width: 60px;
     $tri_width: 36px;
-    position: absolute;
     width: $tribox_width;
-    height: $tribox_width;
+    height: $tri_width;
     box-sizing: border-box;
     cursor: pointer;
     transition: background 0.2s linear;
     z-index: 999;
-    left: 30px;
-    top: 50vh;
-    transform: translateY(-50%);
     opacity: 0;
-    @include media(1200px) {
-        @media only screen and (orientation:landscape){
-            top: 0;
-            transform: translateY(0);
-        }
-    }
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
     @include media(600px) {
-        left: 10px;
+        margin-bottom: 10px;
     }
-    &.active {
+    &.animate {
         animation: md_glnavi__triger .75s ease 2.5s 1 normal forwards;
     }
+    &.active {
+        animation: md_glnavi__triger .75s ease 1 normal forwards;
+    }
     &:hover {
+        span {
+            animation: md_glnavi__line .5s ease normal forwards;
+            &:nth-child(1) {
+                animation: md_glnavi__line .5s ease normal forwards;
+            }
+            &:nth-child(2) {
+                animation: md_glnavi__line .5s ease .1s normal forwards;
+            }
+            &:nth-child(3) {
+                margin-top: 10px;
+                animation: md_glnavi__line .5s ease .2s normal forwards;
+            }
+        }
     }
     span {
         display: block;
@@ -131,22 +149,95 @@
         border-radius: 4px;
         background: #000;
         position: absolute;
-        left: ($tribox_width - $tri_width) / 2;
+        left: 0;
         top: 50%;
         transform: translateY(-50%);
         &:nth-child(1) {
             margin-top: -10px;
             width: $tri_width;
+            @include media(600px) {
+                width: 30px;
+            }
         }
         &:nth-child(2) {
             width: $tri_width - 6px;
+            @include media(600px) {
+                width: 24px;
+            }
         }
         &:nth-child(3) {
             margin-top: 10px;
             width: $tri_width - 12px;
+            @include media(600px) {
+                width: 16px;
+            }
         }
     }
 }
+
+@keyframes md_glnavi__line {
+    0%{
+        left: -36px;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+
+// .md_glnavi__triger {
+//     $tribox_width: 60px;
+//     $tri_width: 36px;
+//     position: absolute;
+//     width: $tribox_width;
+//     height: $tribox_width;
+//     box-sizing: border-box;
+//     cursor: pointer;
+//     transition: background 0.2s linear;
+//     z-index: 999;
+//     left: 30px;
+//     top: 50vh;
+//     transform: translateY(-50%);
+//     opacity: 0;
+//     @include media(1200px) {
+//         @media only screen and (orientation:landscape){
+//             top: 0;
+//             transform: translateY(0);
+//         }
+//     }
+//     @include media(600px) {
+//         left: 10px;
+//     }
+//     &.animate {
+//         animation: md_glnavi__triger .75s ease 2.5s 1 normal forwards;
+//     }
+//     &.active {
+//         animation: md_glnavi__triger .75s ease 1 normal forwards;
+//     }
+//     &:hover {
+//     }
+//     span {
+//         display: block;
+//         height: 2px;
+//         border-radius: 4px;
+//         background: #000;
+//         position: absolute;
+//         left: ($tribox_width - $tri_width) / 2;
+//         top: 50%;
+//         transform: translateY(-50%);
+//         &:nth-child(1) {
+//             margin-top: -10px;
+//             width: $tri_width;
+//         }
+//         &:nth-child(2) {
+//             width: $tri_width - 6px;
+//         }
+//         &:nth-child(3) {
+//             margin-top: 10px;
+//             width: $tri_width - 12px;
+//         }
+//     }
+// }
 
 .md_head__logoCommon {
     padding-left: 20px;
@@ -216,7 +307,7 @@
         font-size: 16px;
     }
     @include media(600px) {
-        font-size: 14px;
+        font-size: 12px;
     }
     @include media(600px) {
         padding-left: 20px;
@@ -261,6 +352,55 @@
         }
     }
 }
+
+.md_header__info {
+    position: absolute;
+    bottom: 5%;
+    right: -100vw;
+    background: rgba(240,240,240,.8);
+    z-index: 101;
+    animation: md_head__comment .8s ease 1s 1 normal forwards;
+    opacity: 0;
+    line-height: 1.5;
+    @include media(660px) {
+        font-size: 13px;
+        bottom: 0;
+    }
+    @include media(540px) {
+        font-size: 11px;
+    }
+    @include media(480px) {
+        width: 100%;
+    }
+    span,a {
+        text-decoration: none;
+        color: #444;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: .75em 1em .75em 3.25em;
+        background-image: url(../images/icon_comment.svg);
+        background-size: auto 1.5em;
+        background-repeat: no-repeat;
+        background-position: 1em center;
+        transition: background .1s linear;
+    }
+    a {
+        &:hover {
+            background-color: rgba(240,240,240,.5);
+        }
+    }
+}
+@keyframes md_head__comment {
+    0%{
+        right: -100vw;
+        opacity: 0;
+    } 100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+
 
 @keyframes md_drawer__nav {
     0%{

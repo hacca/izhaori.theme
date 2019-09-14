@@ -25,22 +25,31 @@ __common
 }
 
 .md_mv__wrap {
-    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .md_mv__img {
     background-image: url(../images/mv_01.jpg);
     background-position: center center;
     background-size: cover;
-    height: 100vh;
+    min-height: 768px;
     opacity: 0;
     transition: background 1s linear;
     filter: grayscale(100%);
-    &.active {
+    @include media(600px) {
+        min-height: 500px;
+    }
+    &.animate {
         filter: grayscale(100%);
         animation:
             'mv_in' 2s ease .5s 1 normal forwards,
             'grayscale' 1s ease 2s 1 normal forwards;
+    }
+    &.active {
+        filter: grayscale(0%);
+        animation:
+            'mv_in' 2s ease .5s 1 normal forwards,
     }
 }
 
@@ -568,6 +577,32 @@ $item_gap__mid : 5%;
 /*--------
 __shop
 -----------------------------------------------*/
+.pg_shop__announce {
+    margin-top: 80px;
+    border: 4px solid #ddd;
+    padding: 30px 30px;
+    @include media(660px) {
+        margin-top: 40px;
+    }
+    .ttl {
+        margin-bottom: .75em;
+        color: #CC6633;
+        i {
+            font-size: 1.2em;
+            padding-right: .5em;
+        }
+    }
+    .cont {
+        p {
+            margin-bottom: .75em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
 .pg_shop {
     min-height: 100vh;
     padding: 40px 10% 80px 10%;

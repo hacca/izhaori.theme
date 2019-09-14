@@ -8,6 +8,7 @@
     <?php wp_deregister_script('jquery'); ?>
     <?php wp_head();?>
     <script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/default.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -15,7 +16,7 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/aos.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20190605" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20190914" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130009474-1"></script>
@@ -25,6 +26,22 @@
         gtag('js', new Date());
         gtag('config', 'UA-130009474-1');
     </script>
+
+    <script>
+(function($) {
+    $(function(){
+$(document).ready(function(){
+var hSize = $(window).height();
+  $('.md_mv__img, .md_header').height(hSize);
+});
+$(window).resize(function(){
+var hSize = $(window).height();
+  $('.md_mv__img, .md_header').height(hSize);
+});
+    });
+})(jQuery);
+</script>
+
 </head>
 
 <body>
@@ -37,21 +54,22 @@
                 <h1 class="md_head__logo">
                     <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/iz_logo.svg" alt="IZ" width="60"></a>
                 </h1>
-                <nav class="fz_20 lt1 gf_ptsans md_glnav">
+                <nav class="fz_16 lt1 gf_ptsans md_glnav">
+                    <div class="md_glnavi__triger" id="drawer_trigger">
+                        <span></span><span></span><span></span>
+                    </div>
                     <ul>
                         <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
+                        <!-- <li><a href="<?php echo home_url(); ?>/itemcat/obi/">ALOHA</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/other/">Other</a></li> -->
                         <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
                         <li><a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a></li>
                     </ul>
                 </nav>
             </div><!-- md_head__navWrap -->
         </header>
-
-        <div class="md_glnavi__triger" id="drawer_trigger">
-            <span></span><span></span><span></span>
-        </div>
 
     <?php else:?>
         <header class="md_header__common" data-role="header" id="fixnav">

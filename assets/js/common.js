@@ -1,7 +1,12 @@
 (function($) {
     $(function(){
         //ロード
-        $('.md_mv__img, .md_header, .md_glnavi__triger').addClass('active');
+        if($.cookie('access')){
+            $('.md_mv__img, .md_header, .md_glnavi__triger').addClass('active');
+        } else {
+            $.cookie('access', 'access');
+            $('.md_mv__img, .md_header, .md_glnavi__triger').addClass('animate');
+        }
 
         //ナビ
         if($('#md_drawer__nav').length){
@@ -74,38 +79,6 @@
             var pos    = tgt.offset().top;
             $("html, body").animate({scrollTop:pos}, 300, "swing");
         }
-
-
-        // //header fix
-        // if($('#fixnav').length){
-        //     var nav = $('#fixnav');
-        //     var navheight = nav.height();
-        //     var navTop = nav.offset().top + navheight;
-        //     var showFlag = false;
-        // }
-        // $(window).scroll(function () {
-        //     var windowTop = $(this).scrollTop();
-        //     if (windowTop >= navTop) {
-        //         if (showFlag == false) {
-        //             showFlag = true;
-        //             nav.addClass('fixed');
-        //             nav.removeClass('fade');
-        //         }
-        //     } else if (windowTop < navTop) {
-        //         if (showFlag) {
-        //             showFlag = false;
-        //             nav.removeClass('fixed');
-        //             nav.addClass('fade');
-        //         }
-        //     }
-        // })
-
-
-
-
-
-
-
 
     });
 })(jQuery);
