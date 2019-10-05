@@ -96,6 +96,19 @@ __common
     }
 }
 
+.md_listItem__nocontents {
+    padding: 10vw 0;
+    flex: 0 1 100%;
+    .ttl {
+        text-align: center;
+        em {
+            display: block;
+            color: #ccc;
+        }
+    }
+}
+
+
 $item_gap : 7%;
 $item_gap__mid : 5%;
 
@@ -368,7 +381,7 @@ $item_gap__mid : 5%;
 .md_tax__ttl {
     position: absolute;
     left: 8vw;
-    top: 5%;
+    top: 3%;
     @include media(960px) {
         left: 100px;
         top: 30px;
@@ -441,6 +454,9 @@ $item_gap__mid : 5%;
     padding-top: 10px;
     margin-top: 20px;
     margin-bottom: 10px;
+    &.other {
+        padding-bottom: 10px;
+    }
 }
 .md_item__sizeUnit {
     text-align: right;
@@ -522,6 +538,14 @@ $item_gap__mid : 5%;
                 }
                 &:last-child {
                     margin-left: auto;
+                }
+            }
+        }
+        &.other {
+            li {
+                &:last-child {
+                    border: none;
+                    padding-bottom: 0;
                 }
             }
         }

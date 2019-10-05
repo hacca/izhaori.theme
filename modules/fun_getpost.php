@@ -24,7 +24,7 @@
                     array(
                         'taxonomy' => 'itemcat',
                         'field' => 'slug',
-                        'terms' => array( 'juban','haori' ),
+                        'terms' => array( 'juban','haori','down','gilet','aloha' ),
                         'operator' => 'IN'
                     ),
                 )

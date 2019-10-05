@@ -97,13 +97,15 @@
                     <?php endif;?>
                 </div>
                 <div class="l_size">
+                    <?php if (has_term(array('haori', 'juban', 'obi'), 'itemcat')): ?>
                     <section class="md_item__sizeWrap">
                         <p class="fz_13 md_item__sizeUnit"><span class="cm active">cm</span> &#x21C4; <span class="inch">Feet inch</span></p>
                         <div class="md_item__sizeChartWrap">
                             <figure class="md_item__sizeImg">
                                 <?php if (has_term('haori', 'itemcat')): ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart01.png" alt="haori size"><?php elseif (has_term('juban', 'itemcat')): ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart02.png" alt="haori size"><?php else: ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart02.png" alt="haori size">
+                                    <?php elseif (has_term('juban', 'itemcat')): ?>
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart03.png" alt="haori size">
                                 <?php endif;?>
                             </figure>
@@ -190,7 +192,7 @@
                                         <?php endif;?>
                                     </ul>
                                 </div>
-                                <?php elseif (has_term('obi', 'itemcat')): ?>
+                            <?php elseif (has_term('obi', 'itemcat')): ?>
                                 <div class="fz_12 md_item__sizeChart">
                                     <ul class="sizeChart">
                                         <?php if (get_field('item_haori__obihaba')): ?>
@@ -224,6 +226,31 @@
                             <?php endif;?>
                         </div>
                     </section>
+                    <?php else: ?>
+                        <?php if(have_rows('item_size__row')): ?>
+                        <section class="md_item__sizeWrap other">
+                            <div class="fz_12 md_item__sizeChart">
+                                <ul class="sizeChart other">
+                                    <?php while(have_rows('item_size__row')): the_row(); ?>
+                                        <?php
+                                        $item_size__ttl = get_sub_field('item_size__ttl');
+                                        $item_size__content = get_sub_field('item_size__content');
+                                        if($item_size__ttl){
+                                            echo '<li><span></span>';
+                                            echo '<span>' . esc_attr($item_size__ttl) . '</span>';
+                                            if($item_size__content){
+                                                echo '<span>' . esc_attr($item_size__content) . '</span>';
+                                            }
+                                            echo '</li>';
+                                        }
+                                        ?>
+                                    <?php endwhile; ?>
+                                </ul>
+                            </div>
+                        </section>
+                        <?php endif; ?>
+                    <?php endif;?><!-- has_term 'haori', 'juban', 'obi' -->
+
                 </div>
                 <div class="l_note">
                     <?php

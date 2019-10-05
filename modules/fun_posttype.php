@@ -56,7 +56,7 @@ function create_post_type_item() {
         'rewrite' => array(true, 'with_front' => false),
         'capabilities' => array(
             'assign_terms' => 'edit_others_posts',
-            'edit_terms' => 'edit_others_posts'
+            'edit_terms' => 'edit_theme_options'
         )
     );
     register_taxonomy('itemcat', 'item', $args);

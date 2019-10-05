@@ -26,12 +26,25 @@
     add_theme_support( 'html5', array('search-form', 'comment-form', 'comment-list',) );
     add_theme_support( 'post-formats', array('aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',) );
 
+    //投稿ページ 独自css
+    add_editor_style('editor-style.css');
 
-    //require_once locate_template('modules/fun_java-css.php');             //  CSS & Javascriptの読み込み
+    //Contactform head 出力
+    add_filter( 'wpcf7_load_js', '__return_false' );
+    add_filter( 'wpcf7_load_css', '__return_false' );
+
+    //偶数番目の記事に○○○する
+    function is_even_post(){
+        global $wp_query;
+        return ((($wp_query->current_post+1) % 2) === 0);
+    }
+    function is_3th_post(){
+        global $wp_query;
+        return ((($wp_query->current_post+1) % 3) === 0);
+    }
+
     require_once locate_template('modules/fun_output-ext.php');             //  テキストなどの出力回り
     require_once locate_template('modules/fun_posttype.php');               //  ポストタイプ
     require_once locate_template('modules/fun_getpost.php');                //  pre_get_post
     require_once locate_template('modules/fun_admin.php');              //  管理画面関係
-    require_once locate_template('modules/fun_plugins.php');                //  プラグイン関係
-    require_once locate_template('modules/fun_other.php');              //  その他の設定
 ?>

@@ -61,9 +61,11 @@
                     <ul>
                         <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
-                        <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
-                        <!-- <li><a href="<?php echo home_url(); ?>/itemcat/obi/">ALOHA</a></li>
-                        <li><a href="<?php echo home_url(); ?>/itemcat/other/">Other</a></li> -->
+                        <!-- <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li> -->
+                        <li><a href="<?php echo home_url(); ?>/itemcat/aloha/">ALOHA</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/gilet/">GILET</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/down/">DOWN</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/others/">OTHERS</a></li>
                         <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
                         <li><a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a></li>
                     </ul>
@@ -87,10 +89,16 @@
 
         <nav class="md_drawer__nav" id="md_drawer__nav">
             <div class="innr">
-                <ul class="lt1 gf_ptsans md_drawer__navList">
+                <ul class="fz_15 lt1 gf_ptsans md_drawer__navList">
                     <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
-                    <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li>
+                    <!-- <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li> -->
+                    <li><a href="<?php echo home_url(); ?>/itemcat/aloha/">ALOHA</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/gilet/">GILET</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/down/">DOWN</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/others/">OTHERS</a></li>
+                </ul>
+                <ul class="fz_13 lt1 gf_ptsans md_drawer__navList">
                     <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
                     <li>
                         <a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a>
