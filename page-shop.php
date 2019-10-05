@@ -8,14 +8,14 @@
         <div class="md_pg__wrap typo_static">
             <div class="l_row pd_side">
                 <section class="pg_shop">
-                    <div class="pg_shop__announce">
+                    <!-- <div class="pg_shop__announce">
                         <p class="fz_16 fw700 ttl"><i class="fas fa-info-circle"></i>［浸水被害による床・壁修繕工事による休業のお知らせ］</p>
                         <div class="fz_14 cont">
                             <p>去る８月末の奈良市周辺の集中豪雨により、当店は床下浸水被害を受けました。これにより以下の期間は床および壁の修繕工事のため休業させていただきます。お客様には大変ご迷惑をお掛け致しますが何卒ご理解賜りますよう、よろしくお願いいたします。</p>
                             <p class="fw700">工事期間：2019年9月20日(金)〜30日(月)<br>店舗再開予定：2019年10月4日(金)</p>
                             <p>尚、近隣の方々には騒音等ご迷惑をお掛けいたしますが、合わせてご理解のほどよろしくお願い申し上げます。</p>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="innr">
                         <div class="pg_shop__info">
                             <h2 class="fz_18 fw700 ttl">SHOP</h2>

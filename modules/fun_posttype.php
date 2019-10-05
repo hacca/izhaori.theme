@@ -75,8 +75,9 @@ function manage_item_posts_columns($columns) {
 }
 function add_column_item($column_name, $post_id) {
     if( $column_name == 'thumbnail' ) {
-        if(has_post_thumbnail()) {
-            the_post_thumbnail('thumbnail', array('style' =>'width:60px;height:auto;'));
+        if(get_field('item_img1')) {
+            $thumb_id = get_field('item_img1');
+            echo wp_get_attachment_image($thumb_id,array(60, 60));
         }
     }
     if( $column_name == 'itemcat' ) {

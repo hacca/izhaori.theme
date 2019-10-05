@@ -26,21 +26,21 @@
         gtag('js', new Date());
         gtag('config', 'UA-130009474-1');
     </script>
-
     <script>
-(function($) {
-    $(function(){
-$(document).ready(function(){
-var hSize = $(window).height();
-  $('.md_mv__img, .md_header').height(hSize);
-});
-$(window).resize(function(){
-var hSize = $(window).height();
-  $('.md_mv__img, .md_header').height(hSize);
-});
-    });
-})(jQuery);
-</script>
+        (function($) {
+            $(function(){
+                $(document).ready(function(){
+                    var hSize = $(window).height();
+                    $('.md_mv__img, .md_header').height(hSize);
+                });
+                $(window).resize(function(){
+                    var hSize = $(window).height();
+                    $('.md_mv__img, .md_header').height(hSize);
+                });
+            });
+        })(jQuery);
+    </script>
+
 
 </head>
 
