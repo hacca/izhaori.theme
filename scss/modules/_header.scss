@@ -76,10 +76,14 @@
     padding-left: 30px;
     @include media(600px) {
         padding-left: 20px;
+        padding-bottom: 5px;
     }
     a {
         display: block;
         width: 60px;
+        @include media(600px) {
+            width: 40px;
+        }
     }
     img {
         max-width: 100%;
@@ -319,6 +323,9 @@
         justify-content: flex-start;
         align-items: flex-start;
         padding-bottom: 20px;
+        @include media(540px) {
+            padding-bottom: 10px;
+        }
         li {
             width: 100%;
             padding: 5px 0;
@@ -332,8 +339,12 @@
             white-space: nowrap;
             letter-spacing: 0;
             line-height: 1;
+            @include media(540px) {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
             &.shop {
-                padding-left: 30px;
+                padding-left: 24px;
                 position: relative;
                 &:after {
                     content: '';
@@ -343,8 +354,8 @@
                     background-image: url(../images/store-alt-light.svg);
                     background-size: cover;
                     background-position: left center;
-                    width: 23px;
-                    height: 19px;
+                    width: 18px;
+                    height: 15px;
                     transform: translateY(-50%);
                 }
             }

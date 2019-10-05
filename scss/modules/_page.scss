@@ -43,13 +43,12 @@ __common
     &.animate {
         filter: grayscale(100%);
         animation:
-            'mv_in' 2s ease .5s 1 normal forwards,
-            'grayscale' 1s ease 2s 1 normal forwards;
+            mv_in 2s ease .5s 1 normal forwards,
+            grayscale 1s ease 2s 1 normal forwards;
     }
     &.active {
         filter: grayscale(0%);
-        animation:
-            'mv_in' 2s ease .5s 1 normal forwards,
+        animation: mv_in 2s ease .5s 1 normal forwards
     }
 }
 

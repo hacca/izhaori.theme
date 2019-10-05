@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width initial-scale=1, user-scalable=yes">
     <?php get_template_part( '_modules_meta' ); ?>
     <?php get_template_part( '_modules_ogp' ); ?>
-    <?php wp_deregister_script('jquery'); ?>
     <?php wp_head();?>
-    <script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <?php wp_enqueue_script('jquery');?>
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/default.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -16,8 +14,9 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/aos.css" />
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20191005" />
-
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20191006" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/load.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130009474-1"></script>
     <script>

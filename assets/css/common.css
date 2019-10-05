@@ -745,12 +745,19 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
 @media screen and (max-width: 600px) {
   .md_head__logo {
     padding-left: 20px;
+    padding-bottom: 5px;
   }
 }
 
 .md_head__logo a {
   display: block;
   width: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  .md_head__logo a {
+    width: 40px;
+  }
 }
 
 .md_head__logo img {
@@ -1032,6 +1039,12 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
   padding-bottom: 20px;
 }
 
+@media screen and (max-width: 540px) {
+  .md_glnav ul {
+    padding-bottom: 10px;
+  }
+}
+
 .md_glnav ul li {
   width: 100%;
   padding: 5px 0;
@@ -1048,8 +1061,15 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
   line-height: 1;
 }
 
+@media screen and (max-width: 540px) {
+  .md_glnav ul a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
 .md_glnav ul a.shop {
-  padding-left: 30px;
+  padding-left: 24px;
   position: relative;
 }
 
@@ -1061,8 +1081,8 @@ a.md_arrow__btn:hover:after, .md_arrow__btn:hover:after {
   background-image: url(../images/store-alt-light.svg);
   background-size: cover;
   background-position: left center;
-  width: 23px;
-  height: 19px;
+  width: 18px;
+  height: 15px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
@@ -1780,15 +1800,15 @@ __common
 .md_mv__img.animate {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
-  -webkit-animation: 'mv_in' 2s ease .5s 1 normal forwards, 'grayscale' 1s ease 2s 1 normal forwards;
-          animation: 'mv_in' 2s ease .5s 1 normal forwards, 'grayscale' 1s ease 2s 1 normal forwards;
+  -webkit-animation: mv_in 2s ease .5s 1 normal forwards, grayscale 1s ease 2s 1 normal forwards;
+          animation: mv_in 2s ease .5s 1 normal forwards, grayscale 1s ease 2s 1 normal forwards;
 }
 
 .md_mv__img.active {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
-  -webkit-animation: "mv_in" 2s ease 0.5s 1 normal forwards;
-          animation: "mv_in" 2s ease 0.5s 1 normal forwards;
+  -webkit-animation: mv_in 2s ease .5s 1 normal forwards;
+          animation: mv_in 2s ease .5s 1 normal forwards;
 }
 
 .md_pg__wrap.typo {
