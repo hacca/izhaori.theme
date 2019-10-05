@@ -29,7 +29,7 @@ function create_post_type_item() {
         'rewrite' => array( 'slug' => 'item', 'with_front' =>false ),
         'menu_position' => 5,
         'menu_icon' => 'dashicons-format-aside',
-        'supports' => array('title','thumbnail'),
+        'supports' => array('title'),
         'has_archive' => 'item',
                 //posttypeにオリジナルの権限
                 //'capability_type' => array( 'item', 'items' ),
