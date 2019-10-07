@@ -7,7 +7,7 @@ if(have_posts()) {
 
 <main class="contents_wrapper" id="contents" role="main">
 
-<div class="fz_18 lt1 gf_ptsans md_tax__ttl"><?php single_term_title();?></div>
+<h1 class="fz_18 lt1 gf_ptsans md_tax__ttl"><?php single_term_title();?></h1>
 
     <?php if (have_posts()) : ?>
         <div class="md_pg__wrap typo">

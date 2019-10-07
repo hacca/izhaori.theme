@@ -27,7 +27,9 @@
     add_theme_support( 'post-formats', array('aside', 'image', 'video', 'audio', 'quote', 'link', 'gallery',) );
 
     //投稿ページ 独自css
-    add_editor_style('editor-style.css');
+    add_editor_style('assets/css/editor-styles.css');
+    //Guteberg独自css
+    add_theme_support( 'editor-styles' );
 
     //Contactform head 出力
     add_filter( 'wpcf7_load_js', '__return_false' );

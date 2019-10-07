@@ -105,20 +105,39 @@ function create_post_type_info() {
             'not_found_in_trash' => 'ゴミ箱にはありません',
             'search_items' => '検索',
         ),
-        'public' => false,
+        'public' => true,
         'show_ui' => true,
         'query_var' => true,
         'hierarchical' => false,
         'rewrite' => array( 'slug' => 'info', 'with_front' =>false ),
         'menu_position' => 5,
         'menu_icon' => 'dashicons-rss',
-        'supports' => array('title'),
-        'has_archive' => false,
+        'supports' => array('title','editor'),
+        'has_archive' => true,
+        'show_in_rest' => true,
     );
     register_post_type('info', $args);
 }
 
-
+function manage_info_posts_columns($columns) {
+    $columns = array(
+        'cb' => '<input type="checkbox" />',
+        'title' => 'タイトル',
+        'info_sticky' => 'トップに表示',
+    );
+    return $columns;
+}
+function add_column_info($column_name, $post_id) {
+    if( $column_name == 'info_sticky' ) {
+        if( get_field('info_sticky') == 1 ) {
+            echo 'する';
+        } else {
+            echo 'しない';
+        }
+    }
+}
+add_filter( 'manage_info_posts_columns', 'manage_info_posts_columns' );
+add_action( 'manage_posts_custom_column', 'add_column_info', 10, 2 );
 
 
 //   ---------------------------------------

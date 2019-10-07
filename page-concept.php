@@ -9,11 +9,11 @@
             <div class="l_row pd_side">
                 <section class="pg_concept">
                     <div class="innr">
-                        <h2 class="fz_28 gf_notoserif pg_concept__read">
+                        <h1 class="fz_28 gf_notoserif pg_concept__read">
                             <p>幾百年、紡がれる日本の着物文化を<br class="normal">現代に新しいコンセプトで継承する。</p>
                             <p>上質な絹織物を新しいデザインで現代に甦らせる。</p>
                             <p>真に美しい装いは永遠に輝く。</p>
-                        </h2>
+                        </h1>
                         <div class="pg_concept__sewing">
                             <h3 class="ttl">縫製について</h3>
                             <div class="fz_15 pg_concept__sewingCont">

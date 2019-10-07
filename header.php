@@ -75,9 +75,9 @@
     <?php else:?>
         <header class="md_header__common" data-role="header" id="fixnav">
             <div class="navWrap">
-                <h1 class="md_head__logoCommon">
+                <p class="md_head__logoCommon">
                     <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/iz_logo.svg" alt="IZ" width="60"></a>
-                </h1>
+                </p>
                 <div class="md_glnavi__trigerCommon" id="drawer_trigger">
                     <span></span><span></span><span></span>
                 </div>
@@ -98,6 +98,7 @@
                     <li><a href="<?php echo home_url(); ?>/itemcat/others/">OTHERS</a></li>
                 </ul>
                 <ul class="fz_13 lt1 gf_ptsans md_drawer__navList">
+                    <li><a href="<?php echo home_url(); ?>/info/">INFORMATION</a></li>
                     <li><a href="<?php echo home_url(); ?>/concept/">CONCEPT</a></li>
                     <li>
                         <a href="<?php echo home_url(); ?>/shop/" class="shop">SHOP</a>

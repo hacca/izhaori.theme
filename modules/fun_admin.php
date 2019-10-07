@@ -87,15 +87,7 @@ add_action('wp_dashboard_setup', 'example_remove_dashboard_widgets');
         echo '<style type="text/css">#contextual-help-link-wrap {display: none !important;}</style>';
     }
     add_action('admin_head', 'disable_help_link');
-//管理画面のフォントをメイリオにします。
-    function meiryo_admin_css() {
-        if(wp_style_is('wpmp-admin-custom')){
-            wp_register_style('meiryo-admin-css', get_template_directory_uri(__FILE__) . '/css/admin.css', array('wpmp-admin-custom'), false);
-            wp_enqueue_style('meiryo-admin-css');
-        }
-    }
-    add_action('admin_enqueue_scripts', 'meiryo_admin_css', 100);
-    add_action('customize_controls_enqueue_scripts', 'meiryo_admin_css', 100);
+
 //WordPressの更新通知表示と、バージョンチェックを無効
     if( !current_user_can( 'administrator' ) ) {
         add_filter( 'pre_site_transient_update_core', '__return_zero' );
