@@ -22,7 +22,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js?20191014"></script>
 
 
 <?php if(is_home() || is_archive('item') || is_tax('itemcat')): ?>
@@ -39,7 +39,7 @@
                 easing: 'ease-out-back',
                     //disable: 'mobile'
                 });
-            $('.slide_img__child figure').click(function(){
+            $(document).on("click", ".slide_img__child figure", function() {
                 var class_name = $(this).attr("class");
                 var num = class_name.slice(5);
                 $(this).parents().find('.slide_img__parent').removeClass('active');

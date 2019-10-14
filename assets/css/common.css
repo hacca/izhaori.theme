@@ -2257,6 +2257,10 @@ __common
           flex: 0 1 17%;
 }
 
+.md_item__slider .slide_img__child figure {
+  cursor: pointer;
+}
+
 .md_item__slider .slide_imgThumb {
   max-width: 100%;
   height: 100%;
