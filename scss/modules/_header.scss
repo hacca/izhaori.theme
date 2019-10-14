@@ -160,20 +160,23 @@
             margin-top: -10px;
             width: $tri_width;
             @include media(600px) {
-                width: 30px;
+                margin-top: -8px;
+                width: 24px;
             }
         }
         &:nth-child(2) {
             width: $tri_width - 6px;
             @include media(600px) {
-                width: 24px;
+                width: $tri_width - 6px;
+                width: 16px;
             }
         }
         &:nth-child(3) {
             margin-top: 10px;
             width: $tri_width - 12px;
             @include media(600px) {
-                width: 16px;
+                margin-top: 8px;
+                width: 10px;
             }
         }
     }
@@ -288,14 +291,26 @@
         transform: translateY(-50%);
         &:nth-child(1) {
             margin-top: -10px;
-            width: 36px;;
+            width: 36px;
+            @include media(600px) {
+                margin-top: -8px;
+                width: 24px;
+            }
         }
         &:nth-child(2) {
             width: 30px;
+            @include media(600px) {
+                width: 16px;
+                width: 16px;
+            }
         }
         &:nth-child(3) {
             margin-top: 10px;
             width: 24px;
+            @include media(600px) {
+                margin-top: 8px;
+                width: 10px;
+            }
         }
     }
 }
@@ -329,6 +344,9 @@
         li {
             width: 100%;
             padding: 5px 0;
+            @include media(540px) {
+                padding: 4px 0;
+            }
         }
         a {
             color: #000;
@@ -342,6 +360,7 @@
             @include media(540px) {
                 padding-top: 5px;
                 padding-bottom: 5px;
+                font-size: 10px;
             }
             &.shop {
                 padding-left: 24px;
@@ -422,7 +441,7 @@
 }
 .md_drawer__nav {
     position: fixed;
-    top: 50vh;
+    top: 50%;
     left: 0;
     width: 100%;
     background: #f6f6f6;
@@ -451,11 +470,22 @@
             padding-bottom: 15vh;
             padding-left: 20vw;
         }
+        @include media(600px) {
+            padding-top: 10vh;
+            padding-bottom: 10vh;
+            padding-left: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 }
 
 
 .md_drawer__navList {
+    flex: 0 1 47%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -463,6 +493,9 @@
     align-items: center;
     &:first-child {
         margin-bottom: 1em;
+        @include media(600px) {
+            padding-left: 13%;
+        }
     }
     @include media(960px) {
         flex-wrap: wrap;

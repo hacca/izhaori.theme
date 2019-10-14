@@ -60,8 +60,8 @@
                     <ul>
                         <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
-                        <!-- <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li> -->
                         <li><a href="<?php echo home_url(); ?>/itemcat/aloha/">ALOHA</a></li>
+                        <li><a href="<?php echo home_url(); ?>/itemcat/skajan/">SKAJAN</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/gilet/">GILET</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/down/">DOWN</a></li>
                         <li><a href="<?php echo home_url(); ?>/itemcat/others/">OTHERS</a></li>
@@ -91,8 +91,8 @@
                 <ul class="fz_15 lt1 gf_ptsans md_drawer__navList">
                     <li><a href="<?php echo home_url(); ?>/itemcat/haori/">HAORI</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/juban/">JUBAN</a></li>
-                    <!-- <li><a href="<?php echo home_url(); ?>/itemcat/obi/">OBI</a></li> -->
                     <li><a href="<?php echo home_url(); ?>/itemcat/aloha/">ALOHA</a></li>
+                    <li><a href="<?php echo home_url(); ?>/itemcat/skajan/">SKAJAN</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/gilet/">GILET</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/down/">DOWN</a></li>
                     <li><a href="<?php echo home_url(); ?>/itemcat/others/">OTHERS</a></li>
