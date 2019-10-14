@@ -974,6 +974,7 @@ Modaal
 .modaal-close {
     position: absolute;
     background: #ccc;
+    top: 80px;
     &:hover,&:focus {
         background: $c1;
         &:before,&:after {
