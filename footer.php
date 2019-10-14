@@ -21,18 +21,27 @@
 <?php wp_footer(); ?>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js?20191014"></script>
+
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.js?20191011"></script>
+
 
 
 <?php if(is_home() || is_archive('item') || is_tax('itemcat')): ?>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/aos.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/modaal.js"></script>
+
+
+
 <script>
     (function($) {
-        $(document).ready(function() {
-            $('[data-fancybox]').fancybox();
-        });
         $(function(){
+            $(document).ready(function() {
+                $('.modaal').modaal({
+                    background_scroll: false,
+                    hide_close : false,
+                });
+
+            });
             AOS.init({
                 offset: 200,
                 duration: 2500,

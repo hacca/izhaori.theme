@@ -155,12 +155,13 @@ $item_gap__mid : 5%;
             flex: 0 1 100%;
         }
     }
-    a {
+    .md_listItem__trigger {
         text-decoration: none;
         color: #fff;
         position: relative;
         display: block;
         overflow: hidden;
+        cursor: pointer;
         &:before {
             content: '';
             position: absolute;
@@ -251,13 +252,10 @@ $item_gap__mid : 5%;
 
 
 .modal_wrapper {
-    width: 100%;
-
-    max-width: 1200px;
     display: none;
 }
-.fancybox-slide>* {
-    background: transparent;
+.md_item__wrap {
+    padding-top: 60px;
 }
 .md_item {
     margin: 0 auto;
@@ -272,6 +270,7 @@ $item_gap__mid : 5%;
     @include media(660px) {
         padding-left: 20px;
         padding-right: 20px;
+        padding-top: 30px;
     }
 }
 .md_item__imgWrap {
@@ -350,11 +349,26 @@ $item_gap__mid : 5%;
     }
     .slide_img__main {
         flex: 0 1 80%;
+        @include media(540px) {
+            flex: 0 1 100%;
+        }
     }
     .slide_img__child {
         flex: 0 1 17%;
         figure {
             cursor: pointer;
+        }
+        @include media(540px) {
+            flex: 0 1 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding-top: 10px;
+            figure {
+                flex: 0 1 25%;
+            }
         }
     }
     .slide_imgThumb {
@@ -363,6 +377,9 @@ $item_gap__mid : 5%;
         display: block;
         margin-bottom: 20px;
         cursor: pointer;
+        @include media(540px) {
+            margin-bottom: 0;
+        }
     }
     @keyframes img_fadein {
         0% {
@@ -939,3 +956,53 @@ __error
     display: block;
     margin: 0 auto;
 }
+
+
+/*--------
+Modaal
+-----------------------------------------------*/
+.modaal-container {
+    background: transparent;
+}
+.modaal-content-container {
+    padding: 0px;
+}
+
+.modaal-wrapper .modaal-close {
+    background: #ccc;
+}
+.modaal-close {
+    position: absolute;
+    background: #ccc;
+    &:hover,&:focus {
+        background: $c1;
+        &:before,&:after {
+            background: #fff;
+        }
+    }
+    &:before,&:after {
+        height: 16px;
+        top: 17px;
+        width: 2px;
+        left: 24px;
+        @include media(767px) {
+            top: 12px;
+            left: 19px;
+        }
+    }
+    @include media(767px) {
+        width: 40px;
+        height: 40px;
+        top: 40px;
+    }
+}
+
+.modaal-container {
+    @include media(767px) {
+        background: transparent;
+        box-shadow: 5px 5px 5px rgba(0,0,0,.5)none
+    }
+}
+
+
+

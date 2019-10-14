@@ -1952,15 +1952,16 @@ __common
   }
 }
 
-.md_listItem a {
+.md_listItem .md_listItem__trigger {
   text-decoration: none;
   color: #fff;
   position: relative;
   display: block;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.md_listItem a:before {
+.md_listItem .md_listItem__trigger:before {
   content: '';
   position: absolute;
   top: 0;
@@ -1976,7 +1977,7 @@ __common
   opacity: 0;
 }
 
-.md_listItem a:after {
+.md_listItem .md_listItem__trigger:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1992,26 +1993,26 @@ __common
   opacity: 0;
 }
 
-.md_listItem a:hover:before {
+.md_listItem .md_listItem__trigger:hover:before {
   left: -50%;
   opacity: 1;
   -webkit-transform: skew(32.0005deg, 0);
           transform: skew(32.0005deg, 0);
 }
 
-.md_listItem a:hover:after {
+.md_listItem .md_listItem__trigger:hover:after {
   right: -50%;
   opacity: 1;
   -webkit-transform: skew(-44deg, 0);
           transform: skew(-44deg, 0);
 }
 
-.md_listItem a:hover .md_listItem__img {
+.md_listItem .md_listItem__trigger:hover .md_listItem__img {
   -webkit-filter: contrast(110%);
           filter: contrast(110%);
 }
 
-.md_listItem a:hover .md_listItem__ttl {
+.md_listItem .md_listItem__trigger:hover .md_listItem__ttl {
   bottom: 0;
 }
 
@@ -2062,13 +2063,11 @@ __common
 }
 
 .modal_wrapper {
-  width: 100%;
-  max-width: 1200px;
   display: none;
 }
 
-.fancybox-slide > * {
-  background: transparent;
+.md_item__wrap {
+  padding-top: 60px;
 }
 
 .md_item {
@@ -2098,6 +2097,7 @@ __common
   .md_item {
     padding-left: 20px;
     padding-right: 20px;
+    padding-top: 30px;
   }
 }
 
@@ -2251,6 +2251,14 @@ __common
           flex: 0 1 80%;
 }
 
+@media screen and (max-width: 540px) {
+  .md_item__slider .slide_img__main {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+}
+
 .md_item__slider .slide_img__child {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 17%;
@@ -2261,12 +2269,47 @@ __common
   cursor: pointer;
 }
 
+@media screen and (max-width: 540px) {
+  .md_item__slider .slide_img__child {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 10px;
+  }
+  .md_item__slider .slide_img__child figure {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 25%;
+            flex: 0 1 25%;
+  }
+}
+
 .md_item__slider .slide_imgThumb {
   max-width: 100%;
   height: 100%;
   display: block;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 540px) {
+  .md_item__slider .slide_imgThumb {
+    margin-bottom: 0;
+  }
 }
 
 @-webkit-keyframes img_fadein {
@@ -3056,6 +3099,64 @@ __error
 .event__img_dummy {
   display: block;
   margin: 0 auto;
+}
+
+/*--------
+Modaal
+-----------------------------------------------*/
+.modaal-container {
+  background: transparent;
+}
+
+.modaal-content-container {
+  padding: 0px;
+}
+
+.modaal-wrapper .modaal-close {
+  background: #ccc;
+}
+
+.modaal-close {
+  position: absolute;
+  background: #ccc;
+}
+
+.modaal-close:hover, .modaal-close:focus {
+  background: #CC9900;
+}
+
+.modaal-close:hover:before, .modaal-close:hover:after, .modaal-close:focus:before, .modaal-close:focus:after {
+  background: #fff;
+}
+
+.modaal-close:before, .modaal-close:after {
+  height: 16px;
+  top: 17px;
+  width: 2px;
+  left: 24px;
+}
+
+@media screen and (max-width: 767px) {
+  .modaal-close:before, .modaal-close:after {
+    top: 12px;
+    left: 19px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modaal-close {
+    width: 40px;
+    height: 40px;
+    top: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modaal-container {
+    background: transparent;
+    -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5) none;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5) none;
+  }
 }
 
 /*# sourceMappingURL=maps/common.css.map */

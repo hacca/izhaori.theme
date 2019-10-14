@@ -47,7 +47,7 @@
 
 
         // スムーズスクロール
-        var notList = 'a[href^="#itemlink"], #togmenu a[href^="#"], a.remodal-close,a[href^="#0"]';
+        var notList = 'a[href^="#item"], #togmenu a[href^="#"], a.remodal-close,a[href^="#0"]';
         $('a[href^="#"]').not(notList).click(function(){
             var speed = 300;
             if($('#fixnav').length){

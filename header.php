@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Noto+Serif+JP" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/aos.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20191010" />
+    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/swiper.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.0/jquery.fancybox.min.css" /> -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/modaal.min.css" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/common.css?20191011" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/assets/js/load.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -38,8 +39,6 @@
             });
         })(jQuery);
     </script>
-
-
 </head>
 
 <body>
