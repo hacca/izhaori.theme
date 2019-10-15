@@ -266,9 +266,14 @@
                                             }
                                         }
                                         ?>
-
                                         <div class="fz_12 md_item__notice">
-                                            <p class="washing">お洗濯について | <strong>ご自宅ではお洗濯できません。</strong>シルク専用のクリーニングをご利用ください。もしも、食べこぼしや目立つ汚れが付いた場合は、時間を置かずにシルク取り扱いクリーニング店へご相談ください。</p>
+                                            <?php if (get_field('item_washing')): ?>
+                                                <?php
+                                                $wash_txt = get_field('item_washing');
+                                                $replace = str_replace('ご自宅ではお洗濯できません。', '<strong>ご自宅ではお洗濯できません。</strong>', $wash_txt);
+                                                echo '<p class="washing">お洗濯について | ' . $replace . '</p>';
+                                                ?>
+                                            <?php endif;?>
                                             <p class="used">ご注意 | ユーズド製品を加工しているため、とても目立つようなものは無いよう気を付けておりますが、多少のシミや汚れについては何卒ご容赦ください。</p>
                                             <?php if (get_field('item_note')): ?>
                                                 <p class="note"><?php the_field('item_note');?></p>
