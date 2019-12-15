@@ -21,7 +21,7 @@
                             <h1 class="fz_18 fw700 ttl">SHOP</h1>
                             <div class="fz_15 pg_shop__infoDeetail">
                                 <p>〒630-8381<br>奈良市福智院町1-2 福智院町バス停前<a href="https://goo.gl/maps/iBYwxrRyVkHfymo58" class="googlemap" target="new" rel="noopener noreferrer nofollow"><i class="fas fa-map-marker-alt"></i></a></p>
-                                <p>PHONE : 080-8513-8514</p>
+                                <p>PHONE : 080-3786-8700</p>
                                 <p>営業日：金・土・日・月（2月、8月は休業）</p>
                                 <p>営業時間：11:00〜日没</p>
                             </div>
