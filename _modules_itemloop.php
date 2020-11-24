@@ -105,7 +105,7 @@
                                     <figure class="md_item__sizeImg">
                                         <?php if (has_term('haori', 'itemcat')): ?>
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart01.png" alt="haori size"><?php elseif (has_term('juban', 'itemcat')): ?>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart02.png" alt="haori size">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart02.png?20201124" alt="haori size">
                                         <?php elseif (has_term('juban', 'itemcat')): ?>
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/size_chart03.png" alt="haori size">
                                         <?php endif;?>
@@ -167,7 +167,7 @@
                                                 <?php endif;?>
                                                 <?php if (get_field('item_haori__yuki')): ?>
                                                     <li>
-                                                        <span>e</span><span>裄</span><span>yuki</span>
+                                                        <span>e</span><span>袖巾</span><span>sodehaba</span>
                                                         <span class="unit cm"><?php the_field('item_haori__yuki');?>cm</span>
                                                         <span class="unit inch">
                                                             <?php
